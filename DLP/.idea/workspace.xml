@@ -5,13 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ast/expressions/ArrayAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expressions/StructAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/expressions/Variable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DLP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_UO277876.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLP_UO277876.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ast_uo277876.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ASTNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/AbstractASTNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Definition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Expression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Statement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Type.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/AbstractDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/VarDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/AbstractExpression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Arithmetic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/ArrayAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Cast.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/CharLiteral.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Comparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/DoubleLiteral.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/IntLiteral.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Logical.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/StructAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/UnaryMinus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Variable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/program/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/AbstractStatement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Assignment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Conditionals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Input.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Print.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Return.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/While.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/AbstractType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/ArrayType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/FunctionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/VoidType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/recordField/RecordField.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +76,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas/DLP_practicas/Compiler_uo277876"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Compiler_uo277876" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Compiler_uo277876" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
