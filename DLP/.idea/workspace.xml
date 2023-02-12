@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ast/definitions/AbstractDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/definitions/VarDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/AbstractStatement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/Assignment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/Conditionals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/Print.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/Return.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/statements/While.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/AbstractType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/ArrayType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/FunctionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/VoidType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/types/recordField/RecordField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/AbstractExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/Arithmetic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/Cast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/CharLiteral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/Comparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/DoubleLiteral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/IntLiteral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/Logical.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/expressions/UnaryMinus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
