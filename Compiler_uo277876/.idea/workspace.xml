@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="" />
+    <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +64,7 @@
       <recent name="C:\Users\infer\Desktop\universidad\DLP\Practicas\entorno\DLP_practicas\Compiler_uo277876" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LexerTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="LexerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parser.LexerTest" />
       <module name="Compiler_uo277876" />
@@ -76,8 +93,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LexerTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.LexerTest" />
       </list>
     </recent_temporary>
   </component>
