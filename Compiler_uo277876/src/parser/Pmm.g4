@@ -7,15 +7,18 @@ NUMBER: [0-9];
 fragment
 LETTER: [a-zA-Z];
 fragment
-DECIMAL: '.' NUMBER*;
+DECIMAL: INT_CONSTANT* '.' NUMBER+ | INT_CONSTANT+ '.' NUMBER*;
 fragment
-EXPONENT: [eE][+-]?INT_CONSTANT;
+EXPONENT: [eE][+-]?NUMBER;
 
 TRASH: [ \n\r\t]+ -> skip;
 COMMENT_BLOCK: '"''"''"' .*? '"''"''"' -> skip;
 COMMENT: '#' .*? '\r'? ('\n' | EOF) -> skip;
-INT_CONSTANT: [1-9]NUMBER+  | '0';
-REAL_CONSTANT: ;
+INT_CONSTANT: [1-9]NUMBER*  | '0';
+REAL_CONSTANT: DECIMAL|(DECIMAL|INT_CONSTANT) EXPONENT;
+CHAR_CONSTANT: '\'' . '\'' | '\'\\' (INT_CONSTANT | [nrt]) '\'';
 ID: (LETTER|'_')|(LETTER|NUMBER|'_')*;
+
+
 
 
