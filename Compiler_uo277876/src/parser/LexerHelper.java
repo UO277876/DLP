@@ -25,12 +25,13 @@ public class LexerHelper {
 
 	public static char lexemeToChar(String str) {
 		try {
-			return 'a';
+			if (str.length() == 1)
+				return str.charAt(0);
 		}
 		catch(NumberFormatException e) {
 			System.out.println(e);
 		}
-		return -1;
+		return '\0';
 	}
 	
 }
