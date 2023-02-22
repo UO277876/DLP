@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objective.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />

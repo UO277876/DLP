@@ -1,10 +1,43 @@
 grammar Pmm;	
 
 program: expression EOF;
+
 expression: INT_CONSTANT
+            | REAL_CONSTANT
             | CHAR_CONSTANT
+            | ID
+            | '(' expression ')'
+            | expression '[' expression ']'
+            | expression '.' ID /* Acceso a campo */
+            | '(' type ')' expression /* CAST */
+            | '-' expression /* Unario */
+            | '!' expression
             | expression ('*'|'/'|'%') expression
             | expression ('+'|'-') expression
+            | expression ('>'|'>='|'<'|'<='|'!='|'==') expression
+            | expression ('&&'|'||') expression; /* And y or */
+
+type: 'int'|'double'|'char';
+
+array_type: ('[' INT_CONSTANT ']')+ type; /*Puede haber matrices, no solo listas*/
+
+statement: 'print' expression ';' | 'print' expression ',' expression ';'
+            /* 'print' expression (',' expression)* ';' */
+            | 'input' expression ';' | 'input' expression ',' expression ';'
+            /* 'input' expression (',' expression)* ';' */
+            | expression '=' expression ';'
+            | 'if' expression ':' block ('else' ':' block)?
+            | 'while' expression ':' block
+            | 'return' expression ';'
+            | expression '(' statement ')'
+            ;
+
+block: statement
+       | '{' statement+ '}'
+       ;
+
+variable: expression
+          | expression variable
        ;
 fragment
 NUMBER: [0-9];

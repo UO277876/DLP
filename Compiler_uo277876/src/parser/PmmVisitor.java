@@ -22,4 +22,28 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExpression(PmmParser.ExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitType(PmmParser.TypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatement(PmmParser.StatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlock(PmmParser.BlockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#variable}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariable(PmmParser.VariableContext ctx);
 }
