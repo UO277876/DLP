@@ -1,6 +1,10 @@
 grammar Pmm;	
 
-program: 
+program: expression EOF;
+expression: INT_CONSTANT
+            | CHAR_CONSTANT
+            | expression ('*'|'/'|'%') expression
+            | expression ('+'|'-') expression
        ;
 fragment
 NUMBER: [0-9];
