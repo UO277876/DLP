@@ -29,6 +29,24 @@ public interface PmmVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType(PmmParser.TypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PmmParser#varDefinition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarDefinition(PmmParser.VarDefinitionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#func_definition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunc_definition(PmmParser.Func_definitionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PmmParser#parameters}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameters(PmmParser.ParametersContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PmmParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

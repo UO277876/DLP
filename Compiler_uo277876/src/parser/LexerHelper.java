@@ -24,13 +24,28 @@ public class LexerHelper {
 	}
 
 	public static char lexemeToChar(String str) {
-		try {
-			if (str.length() == 1)
-				return str.charAt(0);
+		if (str.charAt(0) == '\'' && str.charAt(str.length() - 1) == '\'') { // Si str empieza por ' y acaba por '
+			if (str.charAt(1) == '\\') { // Si str es '\...'
+				String subStr = str.substring(1, str.length() - 1); // Cogemos lo de dentro de ''
+				if (subStr.length() == 2) { // Ejemplo: \n, hay que asegurarse de que no es \t \n \r
+					// Es un carácter /t /r /n
+					switch (subStr.charAt(1)) {
+						case 't':
+							return '\t';
+						case 'r':
+							return '\r';
+						case 'n':
+							return '\n';
+					}
+				}
+				// Es un número
+				return (char) Integer.parseInt(subStr.substring(1));
+			} else {
+				// Es un carácter normal
+				return str.charAt(1);
+			}
 		}
-		catch(NumberFormatException e) {
-			System.out.println(e);
-		}
+		// No es un carácter
 		return '\0';
 	}
 	

@@ -1,11 +1,12 @@
 grammar Pmm;	
 
-program: expression EOF;
+program: (varDefinition | func_definition)+ EOF; /* Una o mas definiciones */
 
 expression: INT_CONSTANT
             | REAL_CONSTANT
             | CHAR_CONSTANT
             | ID
+            | ID '(' (expression(',' expression)*)?')' /* print f(i, (double)i); */
             | '(' expression ')'
             | expression '[' expression ']'
             | expression '.' ID /* Acceso a campo */
@@ -17,16 +18,35 @@ expression: INT_CONSTANT
             | expression ('>'|'>='|'<'|'<='|'!='|'==') expression
             | expression ('&&'|'||') expression; /* And y or */
 
-type: 'int'|'double'|'char';
+type: 'int'
+       |'double'
+       |'char'
+       |'[' INT_CONSTANT ']' type /* Seminario 2 */
+       |'struct' '{' (varDefinition)+ '}' ;
 
-statement: 'print' expression ';' | 'print' expression ',' statement ';'
-            /* 'print' expression (',' expression)* ';' */
-            | 'input' expression ';' | 'input' expression ',' statement ';'
+varDefinition: ID(',' ID)* ':' type ';';
+               /* ID ':' type ';' | ID ',' varDefinition;  ?? */
+
+
+func_definition: 'def' ID '(' parameters? ')' ':' type?
+                    '{' varDefinition* statement* '}';
+
+parameters: ID ':' type (',' ID ':' type)*;
+            /* ID ':' type | ID ':' type ',' parameters ?? */
+
+statement: 'print' expression (',' expression)* ';'
+            /*'print' expression ';' | 'print' expression ',' statement ';' */
+            | 'input' expression (',' expression)* ';'
+            /* 'input' expression ';' | 'input' expression ',' statement ';' */
             | expression '=' expression ';'
-            | 'if' expression ':' block ('else:' block)?
+            | 'if' expression ':' block ('else' ':' block)?
             | 'while' expression ':' block
             | 'return' expression ';'
+            | ID '(' (expression(',' expression)*)?')' ';' /* p() */
             ;
+/* procedimiento: ID expression | ID expression ',' procedimiento);
+   procedimiento_op: procedimiento | landa ??
+*/
 
 block: statement
        | '{' statement+ '}'
@@ -35,6 +55,7 @@ block: statement
 variable: expression
           | expression variable
        ;
+
 fragment
 NUMBER: [0-9];
 fragment
