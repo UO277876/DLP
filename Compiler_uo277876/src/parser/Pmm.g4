@@ -1,23 +1,41 @@
 grammar Pmm;	
 
-program: (varDefinition | func_definition)+ EOF; /* Una o mas definiciones */
+@header{
+import ast.*;
+import ast.definitions.*;
+import ast.expressions.*;
+import ast.statements.*;
+import ast.types.*;
+}
 
-expression: INT_CONSTANT
-            | REAL_CONSTANT
-            | CHAR_CONSTANT
-            | ID
+program returns [Program ast]:
+            (varDefinition | func_definition)+ EOF; /* Una o mas definiciones */
+
+expression returns [Expression ast]:
+            INT_CONSTANT {$ast = new IntLiteral(LexerHelper.lexemeToInt($INT_CONSTANT.text),
+                $INT_CONSTANT.getLine(), $INT_CONSTANT.getCharPositionInLine()+1 ); }
+            | REAL_CONSTANT {$ast = new RealLiteral(LexerHelper.lexemeToReal($REAL_CONSTANT.text),
+                $REAL_CONSTANT.getLine(), $REAL_CONSTANT.getCharPositionInLine()+1 ); }
+            | CHAR_CONSTANT {$ast = new CharLiteral(LexerHelper.lexemeToChar($CHAR_CONSTANT.text),
+                $CHAR_CONSTANT.getLine(), $CHAR_CONSTANT.getCharPositionInLine()+1); }
+            | ID { $ast = new Variable($ID.text, $ID.getLine(), $ID.getCharPositionInLine()+1 ); }
             | ID '(' (expression(',' expression)*)?')' /* print f(i, (double)i); */
-            | '(' expression ')'
+            | '(' expression ')' /*{$ast = $expression.ast;} */
             | expression '[' expression ']'
             | expression '.' ID /* Acceso a campo */
             | '(' type ')' expression /* CAST */
-            | '-' expression /* Unario */
+            | '-' expression /* Unario */ {$ast = new UnaryMinus($expression.ast,$expression.ast.getLine(), $expression.ast.getColumn());}
             | '!' expression
-            | expression ('*'|'/'|'%') expression
-            | expression ('+'|'-') expression
-            | expression ('>'|'>='|'<'|'<='|'!='|'==') expression
-            | expression ('&&'|'||') expression; /* And y or */
-
+            | left=expression OP=('*'|'/'|'%') right=expression {$ast = new Arithmetic($OP.text,
+                 $right.ast, $left.ast, $left.ast.getLine(), $left.ast.getColumn());}
+            | left=expression OP=('+'|'-') right=expression {$ast = new Arithmetic($OP.text,
+                 $right.ast, $left.ast, $left.ast.getLine(), $left.ast.getColumn());}
+            | left=expression OP=('>'|'>='|'<'|'<='|'!='|'==') right=expression{$ast = new Comparator($OP.text,
+                 $right.ast, $left.ast, $left.ast.getLine(), $left.ast.getColumn());}
+            | left=expression OP=('&&'|'||') right=expression /* And y or */
+                 {$ast = new Logical($OP.text, $right.ast, $left.ast,
+                    $left.ast.getLine(), $left.ast.getColumn());}
+            ;
 type: 'int'
        |'double'
        |'char'
@@ -25,14 +43,13 @@ type: 'int'
        |'struct' '{' (varDefinition)+ '}' ;
 
 varDefinition: ID(',' ID)* ':' type ';';
-               /* ID ':' type ';' | ID ',' varDefinition;  ?? */
-
+               /* ID ':' type ';' | ID ',' varDefinition; */
 
 func_definition: 'def' ID '(' parameters? ')' ':' type?
                     '{' varDefinition* statement* '}';
 
 parameters: ID ':' type (',' ID ':' type)*;
-            /* ID ':' type | ID ':' type ',' parameters ?? */
+            /* ID ':' type | ID ':' type ',' parameters */
 
 statement: 'print' expression (',' expression)* ';'
             /*'print' expression ';' | 'print' expression ',' statement ';' */
@@ -45,8 +62,7 @@ statement: 'print' expression (',' expression)* ';'
             | ID '(' (expression(',' expression)*)?')' ';' /* p() */
             ;
 /* procedimiento: ID expression | ID expression ',' procedimiento);
-   procedimiento_op: procedimiento | landa ??
-*/
+   procedimiento_op: procedimiento | landa ?? */
 
 block: statement
        | '{' statement+ '}'

@@ -4,7 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="" />
+    <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/introspector_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/introspector-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/objetive.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler_uo277876.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler_uo277876.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objetivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetivo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/DoubleLiteral.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/program/Program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/LexerHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/LexerHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmBaseVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ExpressionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ExpressionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$Func_definitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$Func_definitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ProgramContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$TypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$TypeContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VarDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VarDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VariableContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VariableContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/DoubleLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/RealLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DLP/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +73,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas",
+    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas/entorno/DLP_practicas/Compiler_uo277876",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -65,18 +103,33 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="input.txt" />
+      <option name="PROGRAM_PARAMETERS" value="small-input.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRigGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.TestRigGUI" />
+      <module name="Compiler_uo277876" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestRigGUI" />
       <item itemvalue="Application.LexerTest" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestRigGUI" />
         <item itemvalue="Application.LexerTest" />
       </list>
     </recent_temporary>

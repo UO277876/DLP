@@ -1,4 +1,4 @@
-package ast.program;
+package ast;
 
 import ast.ASTNode;
 import ast.AbstractASTNode;

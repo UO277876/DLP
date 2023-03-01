@@ -1,10 +1,10 @@
 package ast.expressions;
 
-public class DoubleLiteral extends AbstractExpression{
+public class RealLiteral extends AbstractExpression{
 
     private double value;
 
-    public DoubleLiteral(double value, int line, int column) {
+    public RealLiteral(double value, int line, int column) {
         super(line, column);
         this.value = value;
     }
