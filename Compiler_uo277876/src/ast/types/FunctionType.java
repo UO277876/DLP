@@ -8,20 +8,20 @@ import java.util.List;
 public class FunctionType extends AbstractType {
 
     private Type returnType;
-    private List<VarDefinition> varDefinitions;
+    private List<VarDefinition> parameters;
 
-    public FunctionType(Type returnType, List<VarDefinition> varDefinitions) {
+    public FunctionType(Type returnType, List<VarDefinition> parameters) {
         super(0, 0);
         this.returnType = returnType;
-        this.varDefinitions = varDefinitions;
+        this.parameters = parameters;
     }
 
     public Type getReturnType(){
         return returnType;
     }
 
-    public List<VarDefinition> getVarDefinitions(){
-        return varDefinitions;
+    public List<VarDefinition> getParameters(){
+        return parameters;
     }
 
 }

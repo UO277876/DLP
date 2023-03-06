@@ -2,15 +2,18 @@ package ast.statements;
 
 import ast.Expression;
 
+import java.util.List;
+
 public class Input extends AbstractStatement{
 
-    private Expression expression;
+    private List<Expression> expressions;
 
-    public Input(Expression expression, int line, int column) {
+    public Input(List<Expression> expressions, int line, int column) {
         super(line, column);
+        this.expressions = expressions;
     }
 
-    public Expression getExpression(){
-        return expression;
+    public List<Expression> getExpression(){
+        return expressions;
     }
 }

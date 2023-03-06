@@ -5,14 +5,14 @@ import ast.Statement;
 
 import java.util.List;
 
-public class Conditionals extends AbstractStatement{
+public class Conditional extends AbstractStatement{
 
     private Expression condition;
     private List<Statement> if_statements;
     private List<Statement> else_statements;
 
-    public Conditionals(Expression condition, List<Statement> if_statements,
-                        List<Statement> else_statements, int line, int column) {
+    public Conditional(Expression condition, List<Statement> if_statements,
+                       List<Statement> else_statements, int line, int column) {
         super(line, column);
         this.condition = condition;
         this.if_statements = if_statements;

@@ -1,1 +1,9 @@
--5
+def f(n: int,r: double):  {
+  	real: double;
+  	a: double;
+  	c1, c2: char;  
+	c1 = (char)n;
+  	real = (double)c1 + (double)n + r;
+  	p(); # Invocation as a statement
+  	return (int)c1;
+}

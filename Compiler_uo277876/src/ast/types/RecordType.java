@@ -1,7 +1,5 @@
 package ast.types;
 
-import ast.types.recordField.RecordField;
-
 import java.util.List;
 
 public class RecordType extends AbstractType {
