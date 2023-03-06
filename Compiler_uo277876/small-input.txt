@@ -1,8 +1,3 @@
-def f(n: int,r: double): int {
-  	real: double;
-  	c1, c2: char;
-	c1 = (char)n;
-  	real = (double)c1 + (double)n + r;
-  	p(); # Invocation as a statement
-  	return (int)c1;
+def main(): {
+  	input f(i, (double)i); # Invocation as an expression
 }

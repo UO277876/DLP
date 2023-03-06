@@ -15,16 +15,19 @@
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VariableContext.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/LexerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/LexerHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.tokens" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
