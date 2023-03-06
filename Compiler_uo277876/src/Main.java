@@ -22,11 +22,11 @@ public class Main {
 		// create a parser that feeds off the tokens buffer
 		CommonTokenStream tokens = new CommonTokenStream(lexer); 
 		PmmParser parser = new PmmParser(tokens);	
-		// ASTNode ast = parser.program().ast;
+		ASTNode ast = parser.program().ast;
 		//ASTNode ast = parser.expression().ast;
 		//ASTNode ast = parser.type().ast
 		//ASTNode ast = parser.statement().ast;
-		ASTNode ast = parser.funcDefinition().ast;
+		//ASTNode ast = parser.funcDefinition().ast;
 
 		// * The AST is shown
 		IntrospectorModel model=new IntrospectorModel("Program", ast);

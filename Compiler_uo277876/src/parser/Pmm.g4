@@ -9,8 +9,14 @@ import ast.types.*;
 }
 // /* Sintactico */
 // --------------------- Program ---------------------------
-program returns [Program ast]:
-            (varDefinition | funcDefinition)+ EOF; /* Una o mas definiciones */
+program returns [Program ast] locals
+                [List<Definition> definitions = new ArrayList<Definition>()]:
+            (varDefinition {$definitions.addAll($varDefinition.ast);}
+            | funcDefinition {$definitions.add($funcDefinition.ast);}
+            )+
+            { $ast = new Program($definitions, $definitions.get($definitions.size()-1).getLine(),
+                $definitions.get($definitions.size()-1).getColumn());}
+            EOF; /* Una o mas definiciones */
 
 // --------------------- Expressions ---------------------------
 expression returns [Expression ast] locals [List<Expression> params = new ArrayList<Expression>()]:
@@ -78,7 +84,7 @@ recordFields returns [List<RecordField> ast = new ArrayList<>()] locals
        ;
 
 // --------------------- Definitions ---------------------------
-varDefinition returns [List<VarDefinition> ast = new ArrayList<>()] locals
+varDefinition returns [List<Definition> ast = new ArrayList<Definition>()] locals
                          [List<String> ids = new ArrayList<String>()]:
     /* ID ':' type ';' | ID ',' varDefinition; */
        ID1=ID {$ids.add($ID1.text);}
@@ -93,10 +99,10 @@ varDefinition returns [List<VarDefinition> ast = new ArrayList<>()] locals
        ';'
        ;
 
-funcDefinition returns [FuncDefinition ast] locals
+funcDefinition returns [Definition ast] locals
             [List<Statement> statements = new ArrayList<Statement>(),
-            List<VarDefinition> definitions = new ArrayList<VarDefinition>()]:
-       'def' ID '(' (parameters)? ')' ':' returnType
+            List<Definition> definitions = new ArrayList<Definition>()]:
+       'def' ID '(' parameters ')' ':' returnType
        '{' (varDefinition {$definitions.addAll($varDefinition.ast);})*
        (statement {$statements.add($statement.ast);})* '}'
        { $ast = new FuncDefinition(
@@ -110,11 +116,11 @@ funcDefinition returns [FuncDefinition ast] locals
        ;
 
 parameters returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()]:
-       ID1=ID ':' type1=type {$ast.add(new VarDefinition($type1.ast, $ID1.text,
+       (ID1=ID ':' type1=type {$ast.add(new VarDefinition($type1.ast, $ID1.text,
                                 $ID1.getLine(),$ID1.getCharPositionInLine()+1));}
        (',' ID2=ID ':' type2=type {$ast.add(new VarDefinition($type2.ast, $ID2.text,
                                                  $ID2.getLine(),$ID2.getCharPositionInLine()+1));}
-       )*
+       )*)?
        /* ID ':' type | ID ':' type ',' parameters */
        ;
 

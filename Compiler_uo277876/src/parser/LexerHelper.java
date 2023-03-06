@@ -29,20 +29,20 @@ public class LexerHelper {
 				String subStr = str.substring(1, str.length() - 1); // Cogemos lo de dentro de ''
 				if (subStr.length() == 2) { // Ejemplo: \n, hay que asegurarse de que no es \t \n \r
 					// Es un carácter /t /r /n
-					switch (subStr.charAt(1)) {
-						case 't':
-							return '\t';
-						case 'r':
-							return '\r';
-						case 'n':
-							return '\n';
+					if (subStr.charAt(1) == 't') {
+						return '\t';
+					} else if (subStr.charAt(1) == 'r') {
+						return '\r';
+					} else if (subStr.charAt(1) == 'n') {
+						return '\n';
+					} else {
+						// Es un número
+						return (char) Integer.parseInt(subStr.substring(1));
 					}
+				} else {
+					// Es un carácter normal
+					return str.charAt(1);
 				}
-				// Es un número
-				return (char) Integer.parseInt(subStr.substring(1));
-			} else {
-				// Es un carácter normal
-				return str.charAt(1);
 			}
 		}
 		// No es un carácter
