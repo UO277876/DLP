@@ -21,7 +21,7 @@ program returns [Program ast] locals
 
 // --------------------- Expressions ---------------------------
 expression returns [Expression ast]:
-        ID '(' funcParameters ')' 
+        ID '(' funcParameters ')'
              {
                  $ast = new FunctionInvocation(
                     new Variable($ID.text,$ID.getLine(),$ID.getCharPositionInLine()+1),
@@ -83,7 +83,7 @@ recordFields returns [List<RecordField> ast = new ArrayList<>()] locals
        ;
 
 // --------------------- Definitions ---------------------------
-varDefinition returns [List<Definition> ast = new ArrayList<Definition>()] locals
+varDefinition returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()] locals
                          [List<String> ids = new ArrayList<String>()]:
     /* ID ':' type ';' | ID ',' varDefinition; */
        ID1=ID {$ids.add($ID1.text);}
@@ -100,14 +100,15 @@ varDefinition returns [List<Definition> ast = new ArrayList<Definition>()] local
 
 funcDefinition returns [Definition ast] locals
             [List<Statement> statements = new ArrayList<Statement>(),
-            List<Definition> definitions = new ArrayList<Definition>()]:
+            List<Definition> definitions = new ArrayList<Definition>(),
+            List<VarDefinition> varDefinitions= new ArrayList<VarDefinition>()]:
        'def' ID '(' parameters ')' ':' returnType
-       '{' (varDefinition {$definitions.addAll($varDefinition.ast);})*
+       '{' (varDefinition {$varDefinitions.addAll($varDefinition.ast);})*
        (statement {$statements.add($statement.ast);})* '}'
        { $ast = new FuncDefinition(
             new FunctionType($returnType.ast, $parameters.ast),
                 $ID.text,
-                $definitions,
+                $varDefinitions,
                 $statements,
                 $ID.getLine(),
                 $ID.getCharPositionInLine()+1);
@@ -116,14 +117,15 @@ funcDefinition returns [Definition ast] locals
 
 mainDefinition returns [Definition ast] locals
             [List<Statement> statements = new ArrayList<Statement>(),
-            List<Definition> definitions = new ArrayList<Definition>(),]:
+            List<Definition> definitions = new ArrayList<Definition>(),
+            List<VarDefinition> varDefinitions= new ArrayList<VarDefinition>()]:
        'def' MAIN='main' '(' ')' ':'
-       '{' (varDefinition {$definitions.addAll($varDefinition.ast);})*
+       '{' (varDefinition {$varDefinitions.addAll($varDefinition.ast);})*
        (statement {$statements.add($statement.ast);})* '}'
        { $ast = new FuncDefinition(
             new FunctionType(new VoidType(), new ArrayList<VarDefinition>()),
                 $MAIN.text,
-                $definitions,
+                $varDefinitions,
                 $statements,
                 $MAIN.getLine(),
                 $MAIN.getCharPositionInLine()+1);
@@ -220,7 +222,7 @@ COMMENT: '#' .*? '\r'? ('\n' | EOF) -> skip;
 INT_CONSTANT: [1-9]NUMBER*  | '0';
 REAL_CONSTANT: DECIMAL|(DECIMAL|INT_CONSTANT) EXPONENT;
 CHAR_CONSTANT: '\'' . '\'' | '\'' '\\' (INT_CONSTANT | [nrt]) '\'';
-ID: (LETTER|'_')|(LETTER|NUMBER|'_')*;
+ID: (LETTER|'_')(LETTER|NUMBER|'_')*;
 
 
 

@@ -8,26 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DLP_uo277876.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_uo277876.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ast_uo277876.png" beforeDir="false" afterPath="$PROJECT_DIR$/ast_uo277876.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmBaseVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmBaseVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.tokens" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/PmmVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,23 +39,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/infer/Desktop/universidad/DLP/Practicas/DLP_practicas/Compiler_uo277876&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas/entorno/DLP_practicas/Compiler_uo277876",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\infer\Desktop\universidad\DLP\Practicas\DLP_practicas\Compiler_uo277876" />
       <recent name="C:\Users\infer\Desktop\universidad\DLP\Practicas\entorno\DLP_practicas\Compiler_uo277876" />
+      <recent name="C:\Users\infer\Desktop\universidad\DLP\Practicas\DLP_practicas\Compiler_uo277876" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ast.expressions" />
@@ -93,7 +79,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="input.txt" />
+      <option name="PROGRAM_PARAMETERS" value="test.input.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

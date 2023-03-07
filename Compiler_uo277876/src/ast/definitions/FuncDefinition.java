@@ -9,9 +9,9 @@ import java.util.List;
 public class FuncDefinition extends AbstractDefinition {
 
     private List<Statement> statements;
-    private List<Definition> varDefinitions;
+    private List<VarDefinition> varDefinitions;
 
-    public FuncDefinition(Type type, String name, List<Definition> varDefinitions,
+    public FuncDefinition(Type type, String name, List<VarDefinition> varDefinitions,
                           List<Statement> statements, int line, int column) {
         super(type, name, line, column);
         this.statements = statements;
@@ -21,7 +21,7 @@ public class FuncDefinition extends AbstractDefinition {
     public List<Statement> getStatements(){
         return statements;
     }
-    public List<Definition> getDefinitions(){
+    public List<VarDefinition> getDefinitions(){
         return varDefinitions;
     }
 }

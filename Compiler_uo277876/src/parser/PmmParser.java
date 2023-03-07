@@ -769,7 +769,7 @@ public class PmmParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class VarDefinitionContext extends ParserRuleContext {
-		public List<Definition> ast = new ArrayList<Definition>();
+		public List<VarDefinition> ast = new ArrayList<VarDefinition>();
 		public List<String> ids = new ArrayList<String>();
 		public Token ID1;
 		public Token ID2;
@@ -849,6 +849,7 @@ public class PmmParser extends Parser {
 		public Definition ast;
 		public List<Statement> statements = new ArrayList<Statement>();
 		public List<Definition> definitions = new ArrayList<Definition>();
+		public List<VarDefinition> varDefinitions = new ArrayList<VarDefinition>();
 		public Token ID;
 		public ParametersContext parameters;
 		public ReturnTypeContext returnType;
@@ -917,7 +918,7 @@ public class PmmParser extends Parser {
 					{
 					setState(182);
 					((FuncDefinitionContext)_localctx).varDefinition = varDefinition();
-					_localctx.definitions.addAll(((FuncDefinitionContext)_localctx).varDefinition.ast);
+					_localctx.varDefinitions.addAll(((FuncDefinitionContext)_localctx).varDefinition.ast);
 					}
 					} 
 				}
@@ -945,7 +946,7 @@ public class PmmParser extends Parser {
 			 ((FuncDefinitionContext)_localctx).ast =  new FuncDefinition(
 			            new FunctionType(((FuncDefinitionContext)_localctx).returnType.ast, ((FuncDefinitionContext)_localctx).parameters.ast),
 			                (((FuncDefinitionContext)_localctx).ID!=null?((FuncDefinitionContext)_localctx).ID.getText():null),
-			                _localctx.definitions,
+			                _localctx.varDefinitions,
 			                _localctx.statements,
 			                ((FuncDefinitionContext)_localctx).ID.getLine(),
 			                ((FuncDefinitionContext)_localctx).ID.getCharPositionInLine()+1);
@@ -968,6 +969,7 @@ public class PmmParser extends Parser {
 		public Definition ast;
 		public List<Statement> statements = new ArrayList<Statement>();
 		public List<Definition> definitions = new ArrayList<Definition>();
+		public List<VarDefinition> varDefinitions = new ArrayList<VarDefinition>();
 		public Token MAIN;
 		public VarDefinitionContext varDefinition;
 		public StatementContext statement;
@@ -1023,7 +1025,7 @@ public class PmmParser extends Parser {
 					{
 					setState(207);
 					((MainDefinitionContext)_localctx).varDefinition = varDefinition();
-					_localctx.definitions.addAll(((MainDefinitionContext)_localctx).varDefinition.ast);
+					_localctx.varDefinitions.addAll(((MainDefinitionContext)_localctx).varDefinition.ast);
 					}
 					} 
 				}
@@ -1051,7 +1053,7 @@ public class PmmParser extends Parser {
 			 ((MainDefinitionContext)_localctx).ast =  new FuncDefinition(
 			            new FunctionType(new VoidType(), new ArrayList<VarDefinition>()),
 			                (((MainDefinitionContext)_localctx).MAIN!=null?((MainDefinitionContext)_localctx).MAIN.getText():null),
-			                _localctx.definitions,
+			                _localctx.varDefinitions,
 			                _localctx.statements,
 			                ((MainDefinitionContext)_localctx).MAIN.getLine(),
 			                ((MainDefinitionContext)_localctx).MAIN.getCharPositionInLine()+1);
