@@ -6,7 +6,9 @@ import ast.definitions.*;
 import ast.expressions.*;
 import ast.statements.*;
 import ast.types.*;
+import errorhandler.*;
 }
+
 // /* Sintactico */
 // --------------------- Program ---------------------------
 program returns [Program ast] locals
@@ -92,7 +94,7 @@ varDefinition returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()]
        {
             for(String id: $ids){
                 $ast.add(
-                  new VarDefinition($type.ast,id,$ID1.getLine(),$ID1.getCharPositionInLine()+1));
+                   new VarDefinition($type.ast,id,$ID1.getLine(),$ID1.getCharPositionInLine()+1));
             }
        }
        ';'

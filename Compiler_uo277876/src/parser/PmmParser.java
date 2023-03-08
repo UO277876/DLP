@@ -6,6 +6,7 @@ import ast.definitions.*;
 import ast.expressions.*;
 import ast.statements.*;
 import ast.types.*;
+import errorhandler.*;
 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -825,8 +826,12 @@ public class PmmParser extends Parser {
 			((VarDefinitionContext)_localctx).type = type();
 
 			            for(String id: _localctx.ids){
-			                _localctx.ast.add(
-			                  new VarDefinition(((VarDefinitionContext)_localctx).type.ast,id,((VarDefinitionContext)_localctx).ID1.getLine(),((VarDefinitionContext)_localctx).ID1.getCharPositionInLine()+1));
+			                if(_localctx.ids.contains(id)){
+			                    new ErrorType(id, ((VarDefinitionContext)_localctx).ID1.getCharPositionInLine()+1,"Variable '" + id + "' is already defined.");
+			                } else {
+			                    _localctx.ast.add(
+			                         new VarDefinition(((VarDefinitionContext)_localctx).type.ast,id,((VarDefinitionContext)_localctx).ID1.getLine(),((VarDefinitionContext)_localctx).ID1.getCharPositionInLine()+1));
+			                }
 			            }
 			       
 			setState(172);
