@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ast/types/ErrorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/errorhandler/ErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wrong.input.1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wrong.input.2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLP_uo277876.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_uo277876.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ast_uo277876.png" beforeDir="false" afterPath="$PROJECT_DIR$/ast_uo277876.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +49,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas/entorno/DLP_practicas/Compiler_uo277876",
-    "project.structure.last.edited": "SDKs",
+    "last_opened_file_path": "C:/Users/infer/Desktop/DLP_examen/Compiler_uo277876",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "vcs.Perforce"
   }
 }]]></component>
   <component name="RecentsManager">
