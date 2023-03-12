@@ -813,7 +813,12 @@ public class PmmParser extends Parser {
 				match(T__25);
 				setState(162);
 				((VarDefinitionContext)_localctx).ID2 = match(ID);
-				_localctx.ids.add((((VarDefinitionContext)_localctx).ID2!=null?((VarDefinitionContext)_localctx).ID2.getText():null));
+				 if(_localctx.ids.contains((((VarDefinitionContext)_localctx).ID2!=null?((VarDefinitionContext)_localctx).ID2.getText():null))){
+				                        new ErrorType("Variable with name " + (((VarDefinitionContext)_localctx).ID2!=null?((VarDefinitionContext)_localctx).ID2.getText():null) + " is already defined.",
+				                            ((VarDefinitionContext)_localctx).ID2.getLine(),((VarDefinitionContext)_localctx).ID2.getCharPositionInLine()+1);
+				                     } else {
+				                        _localctx.ids.add((((VarDefinitionContext)_localctx).ID2!=null?((VarDefinitionContext)_localctx).ID2.getText():null));}
+				                     
 				}
 				}
 				setState(168);
@@ -826,12 +831,8 @@ public class PmmParser extends Parser {
 			((VarDefinitionContext)_localctx).type = type();
 
 			            for(String id: _localctx.ids){
-			                if(_localctx.ids.contains(id)){
-			                    new ErrorType(id, ((VarDefinitionContext)_localctx).ID1.getCharPositionInLine()+1,"Variable '" + id + "' is already defined.");
-			                } else {
-			                    _localctx.ast.add(
-			                         new VarDefinition(((VarDefinitionContext)_localctx).type.ast,id,((VarDefinitionContext)_localctx).ID1.getLine(),((VarDefinitionContext)_localctx).ID1.getCharPositionInLine()+1));
-			                }
+			                _localctx.ast.add(
+			                   new VarDefinition(((VarDefinitionContext)_localctx).type.ast,id,((VarDefinitionContext)_localctx).ID1.getLine(),((VarDefinitionContext)_localctx).ID1.getCharPositionInLine()+1));
 			            }
 			       
 			setState(172);

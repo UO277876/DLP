@@ -6,7 +6,9 @@ import ast.definitions.*;
 import ast.expressions.*;
 import ast.statements.*;
 import ast.types.*;
+import errorhandler.*;
 }
+
 // /* Sintactico */
 // --------------------- Program ---------------------------
 program returns [Program ast] locals
@@ -87,12 +89,18 @@ varDefinition returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()]
                          [List<String> ids = new ArrayList<String>()]:
     /* ID ':' type ';' | ID ',' varDefinition; */
        ID1=ID {$ids.add($ID1.text);}
-       (',' ID2=ID {$ids.add($ID2.text);})*
+       (',' ID2=ID { if($ids.contains($ID2.text)){
+                        new ErrorType("Variable with name " + $ID2.text + " is already defined.",
+                            $ID2.getLine(),$ID2.getCharPositionInLine()+1);
+                     } else {
+                        $ids.add($ID2.text);}
+                     }
+       )*
        ':' type
        {
             for(String id: $ids){
                 $ast.add(
-                  new VarDefinition($type.ast,id,$ID1.getLine(),$ID1.getCharPositionInLine()+1));
+                   new VarDefinition($type.ast,id,$ID1.getLine(),$ID1.getCharPositionInLine()+1));
             }
        }
        ';'
