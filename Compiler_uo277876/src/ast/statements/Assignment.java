@@ -1,6 +1,7 @@
 package ast.statements;
 
 import ast.Expression;
+import semantic.Visitor;
 
 public class Assignment extends AbstractStatement{
 
@@ -19,5 +20,10 @@ public class Assignment extends AbstractStatement{
 
     public Expression getLeft(){
         return left;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }

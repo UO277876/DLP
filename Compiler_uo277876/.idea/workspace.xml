@@ -5,10 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/semantic/AbstractVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/semantic/LValueVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/semantic/Visitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/small-input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objetive.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetive.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objetivos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetivos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ASTNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ASTNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/AbstractASTNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/AbstractASTNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/AbstractDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/AbstractDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/VarDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/VarDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/AbstractExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/AbstractExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Arithmetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/Arithmetic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/ArrayAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/ArrayAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Cast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/Cast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/CharLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/CharLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Comparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/Comparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/FunctionInvocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/IntLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/IntLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Logical.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/Logical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/RealLiteral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/RealLiteral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/StructAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/StructAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/UnaryMinus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/UnaryMinus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/UnaryNot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/UnaryNot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/Variable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/AbstractStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/AbstractStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Conditional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/Conditional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/Print.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/Return.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/Return.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/statements/While.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/While.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/AbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/AbstractType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/ArrayType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/ErrorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/FunctionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/FunctionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/VoidType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/VoidType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrong.input.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrong.input.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,19 +78,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/infer/Desktop/DLP_examen/Compiler_uo277876&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Perforce&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas/entorno/DLP_practicas/Compiler_uo277876",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Perforce"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\infer\Desktop\universidad\DLP\Practicas\entorno\DLP_practicas\Compiler_uo277876" />

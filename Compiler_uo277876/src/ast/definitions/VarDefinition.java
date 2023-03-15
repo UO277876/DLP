@@ -1,7 +1,7 @@
 package ast.definitions;
 
 import ast.Type;
-import ast.types.AbstractType;
+import semantic.Visitor;
 
 public class VarDefinition extends AbstractDefinition {
 
@@ -13,5 +13,10 @@ public class VarDefinition extends AbstractDefinition {
 
     public int getOffset(){
         return offset;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }

@@ -5,7 +5,7 @@ import ast.AbstractASTNode;
 import ast.Definition;
 import ast.Type;
 
-public class AbstractDefinition extends AbstractASTNode implements Definition {
+public abstract class AbstractDefinition extends AbstractASTNode implements Definition {
 
     private Type type;
     private String name;

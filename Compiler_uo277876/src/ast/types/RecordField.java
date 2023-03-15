@@ -2,8 +2,7 @@ package ast.types;
 
 import ast.AbstractASTNode;
 import ast.Type;
-
-import java.util.List;
+import semantic.Visitor;
 
 public class RecordField extends AbstractASTNode {
     private String name;
@@ -20,5 +19,10 @@ public class RecordField extends AbstractASTNode {
     }
     public String getName() {
         return name;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }

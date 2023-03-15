@@ -2,8 +2,8 @@ package ast.statements;
 
 import ast.Expression;
 import ast.Statement;
+import semantic.Visitor;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.List;
 
 public class While extends AbstractStatement {
@@ -23,5 +23,10 @@ public class While extends AbstractStatement {
 
     public List<Statement> getStatements() {
         return statements;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }

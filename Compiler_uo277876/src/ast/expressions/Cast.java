@@ -2,6 +2,7 @@ package ast.expressions;
 
 import ast.Expression;
 import ast.Type;
+import semantic.Visitor;
 
 public class Cast extends AbstractExpression{
 
@@ -20,5 +21,10 @@ public class Cast extends AbstractExpression{
 
     public Expression getExpression(){
         return expression;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }

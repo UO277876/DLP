@@ -1,8 +1,8 @@
 package ast.definitions;
 
-import ast.Definition;
 import ast.Statement;
 import ast.Type;
+import semantic.Visitor;
 
 import java.util.List;
 
@@ -21,7 +21,12 @@ public class FuncDefinition extends AbstractDefinition {
     public List<Statement> getStatements(){
         return statements;
     }
-    public List<VarDefinition> getDefinitions(){
+    public List<VarDefinition> getVarDefinitions(){
         return varDefinitions;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }

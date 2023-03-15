@@ -1,7 +1,7 @@
 package ast.statements;
 
 import ast.Expression;
-import ast.Statement;
+import semantic.Visitor;
 
 import java.util.List;
 
@@ -17,4 +17,10 @@ public class Print extends AbstractStatement {
     public List<Expression> getExpressions(){
         return expressions;
     }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
+    }
+
 }

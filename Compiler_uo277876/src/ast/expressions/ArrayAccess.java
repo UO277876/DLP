@@ -1,6 +1,7 @@
 package ast.expressions;
 
 import ast.Expression;
+import semantic.Visitor;
 
 public class ArrayAccess extends AbstractExpression{
 
@@ -20,6 +21,11 @@ public class ArrayAccess extends AbstractExpression{
 
     public Expression getExpression2(){
         return expr2;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 
 }

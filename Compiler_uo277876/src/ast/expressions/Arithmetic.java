@@ -1,6 +1,7 @@
 package ast.expressions;
 
 import ast.Expression;
+import semantic.Visitor;
 
 public class Arithmetic extends AbstractExpression{
 
@@ -25,5 +26,10 @@ public class Arithmetic extends AbstractExpression{
 
     public Expression getLeft(){
         return left;
+    }
+
+    @Override
+    public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
+        return visitor.visit(this,parameters);
     }
 }
