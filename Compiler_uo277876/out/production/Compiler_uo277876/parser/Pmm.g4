@@ -93,7 +93,7 @@ varDefinition returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()]
                         new ErrorType("Variable with name " + $ID2.text + " is already defined.",
                             $ID2.getLine(),$ID2.getCharPositionInLine()+1);
                      } else {
-                        $ids.add($ID2.text);}
+                            $ids.add($ID2.text);}
                      }
        )*
        ':' type

@@ -1,6 +1,6 @@
 package ast;
 
 public interface Expression extends ASTNode {
-    void setLValue(boolean lvalue);
-    boolean getLValue();
+    public void setLValue(boolean lvalue);
+    public boolean getLValue();
 }
