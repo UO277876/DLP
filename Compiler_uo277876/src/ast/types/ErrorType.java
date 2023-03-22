@@ -19,7 +19,7 @@ public class ErrorType extends AbstractType{
     }
 
     public String toString(){
-        return "Error: " + message;
+        return "Error: " + message + " in (" + getLine() + "," + getColumn() + ")";
     }
 
     @Override
