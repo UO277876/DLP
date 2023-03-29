@@ -42,11 +42,11 @@ Producciones {
 }
 
 Reglas {
-    (1) statement.type = expression2.type.mustBePromoteTo(expression1.type)
-    (2) statement.type =
-    (3)
+    (1) expression2.type.mustBePromoteTo(expression1.type)
+    (2) 
+    (3) expression.mustBePromoteTo(
     (4)
-    (5)
+    (5) expression.mustBePromoteTo(statement.returnType)
     (6)
 }
 
