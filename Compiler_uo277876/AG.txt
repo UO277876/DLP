@@ -43,18 +43,18 @@ Producciones {
 
 Reglas {
     (1) expression2.type.mustBePromoteTo(expression1.type)
-    (2) 
-    (3) expression.mustBePromoteTo(
-    (4)
-    (5) expression.mustBePromoteTo(statement.returnType)
-    (6)
+    (2) expression.type.logical()
+    (3) expression.type.mustBePromoteTo()
+    (4) expression.type.mustBePromoteTo()
+    (5) expression.type.mustBePromoteTo()
+    (6) expression.type.logical()
 }
 
 // DEFINITION
 Producciones {
-    (1)
+    (1) FuncDefinition: definition1 -> type ID definition2* statement*
 }
 
 Reglas {
-    (1)
+    (1) statement*.foreach(statement -> statement.returnType = type)
 }
