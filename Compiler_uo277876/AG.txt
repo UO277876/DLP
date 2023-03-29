@@ -1,0 +1,60 @@
+// EXPRESSION
+Producciones {
+    (1) Arithmetic: expression1 -> expression2 (+|-|*|/) expression3
+    (2) ArrayAccess: expression1 -> expression2 expression3
+    (3) Cast: expression1 -> type expression2
+    (4) CharLiteral: expression -> CHAR
+    (5) Comparator: expression -> expression2 ('>'|'>='|'<'|'<='|'!='|'==') expression3
+    (6) FunctionInvocation: expression1 -> expression2 expression3*
+    (7) IntLiteral: expression -> INT_LITERAL
+    (8) Logical: expression -> expression2 ('&&'|'||') expression3
+    (9) RealLiteral: expression -> REAL
+    (10) StructAccess: expression1 -> ID expression2
+    (11) UnaryMinus: expression1 -> expression2
+    (12) UnaryNot: expression1 -> expression2
+    (13) Variable: expression -> ID
+}
+
+Reglas {
+    (1) expression1.type = expression2.type.arithmetic(expression3.type)
+    (2) expression1.type = expression2.type.squareBrackets(expression3.type)
+    (3) expression1.type = type.canBeCastTo(expression2.type)
+    (4) expression.type = new CharType()
+    (5) expression1.type = expression2.type.comparison(expression3.type)
+    (6) expression1.type = expression2.type.parenthesis(expression3*.string.map(ex -> ex.type)ToList)
+    (7) expression.type = new IntType()
+    (8) expression1.type = expression2.type.logic(expression3.type)
+    (9) expression.type = new DoubleType()
+    (10) expression1.type = expression2.type.dot(ID);
+    (11) expression1.type = expression2.type.arithmeticUnary()
+    (12) expression1.type = expression2.type.logic()
+    (13) expression.type = expression.definition.type;
+}
+
+// STATEMENT
+Producciones {
+    (1) Assignment: statement -> expression1 expression2
+    (2) Conditional: statement1 -> expression statement2* statement3*
+    (3) Input: statement -> expression
+    (4) Print: statement -> expression
+    (5) Return: statement -> expression
+    (6) While: statement1 -> expression statement2*
+}
+
+Reglas {
+    (1) statement.type = expression2.type.mustBePromoteTo(expression1.type)
+    (2) statement.type =
+    (3)
+    (4)
+    (5)
+    (6)
+}
+
+// DEFINITION
+Producciones {
+    (1)
+}
+
+Reglas {
+    (1)
+}
