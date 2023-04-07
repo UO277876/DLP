@@ -1,5 +1,7 @@
 package ast.types;
 
+import ast.ASTNode;
+import ast.Type;
 import semantic.Visitor;
 
 import java.util.List;
@@ -14,6 +16,16 @@ public class RecordType extends AbstractType {
 
     public List<RecordField> getFields() {
         return fields;
+    }
+
+    @Override
+    public Type dot(String field, ASTNode node) {
+        for (RecordField f : fields) {
+            if (f.getName().equals(field))
+                return f.getType();
+        }
+
+        return super.dot(field,node);
     }
 
     @Override

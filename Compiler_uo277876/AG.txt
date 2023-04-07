@@ -25,10 +25,10 @@ Reglas {
     (7) expression.type = new IntType()
     (8) expression1.type = expression2.type.logic(expression3.type)
     (9) expression.type = new DoubleType()
-    (10) expression1.type = expression2.type.dot(ID);
+    (10) expression1.type = expression2.type.dot(ID)
     (11) expression1.type = expression2.type.arithmeticUnary()
     (12) expression1.type = expression2.type.logic()
-    (13) expression.type = expression.definition.type;
+    (13) expression.type = expression.definition.type
 }
 
 // STATEMENT

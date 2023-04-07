@@ -1,5 +1,6 @@
 package ast.types;
 
+import ast.ASTNode;
 import ast.Type;
 import semantic.Visitor;
 
@@ -19,6 +20,23 @@ public class ArrayType extends AbstractType{
     }
     public Type getType(){
         return of;
+    }
+
+    @Override
+    public boolean isLogical() {
+        return false;
+    }
+
+    @Override
+    public Type squareBrackets(Type t, ASTNode node){
+        if(t instanceof IntType) {
+            return of;
+        }
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
+        return super.squareBrackets(t,node);
     }
 
     @Override

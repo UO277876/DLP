@@ -25,6 +25,14 @@ public abstract class AbstractDefinition extends AbstractASTNode implements Defi
         return name;
     }
 
+    public void setType(Type type){
+        this.type = type;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
     public int getScope(){return scope;}
     public void setScope(int scope){this.scope = scope;}
 }
