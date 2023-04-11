@@ -143,12 +143,9 @@ public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
         // No se hace el super porque para asignar el lvalue se tiene que recorrer el árbol
         for (Expression e : in.getExpressions()) {
             e.accept(this, params);
-            if (!e.getLValue())
-                new ErrorType("Variables not found", in.getLine(), in.getColumn());
             e.setType(e.getType().mustBePromoteTo(e.getType(),in));
         }
 
-        // Falta el asignar type
         return null;
     }
 
@@ -156,11 +153,9 @@ public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
     public Void visit(Print p, Type params) {
         for (Expression e : p.getExpressions()) {
             e.accept(this, params);
-            if (!e.getLValue())
-                new ErrorType("Variables not found", p.getLine(), p.getColumn());
+            e.setType(e.getType().mustBePromoteTo(e.getType(),p));
         }
 
-        // Falta el asignar type
         return null;
     }
 
