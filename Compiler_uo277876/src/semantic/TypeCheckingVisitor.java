@@ -145,6 +145,7 @@ public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
             e.accept(this, params);
             if (!e.getLValue())
                 new ErrorType("Variables not found", in.getLine(), in.getColumn());
+            e.setType(e.getType().mustBePromoteTo(e.getType(),in));
         }
 
         // Falta el asignar type
