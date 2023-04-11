@@ -20,9 +20,10 @@ public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
         if(definition == null){
             v.setDefinition(new VarDefinition(new ErrorType("Variable not found", v.getLine(), v.getColumn()),
                     "error", v.getLine(), v.getColumn()));
+        } else {
+            v.setDefinition(definition);
         }
 
-        v.setDefinition(definition);
         return null;
     }
 

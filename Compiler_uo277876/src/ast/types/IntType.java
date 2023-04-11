@@ -52,6 +52,20 @@ public class IntType extends AbstractType{
     }
 
     @Override
+    public Type logic(Type t, ASTNode node){
+        if(t.isLogical()) {
+            return t;
+        }
+
+        return super.logic(t,node);
+    }
+
+    @Override
+    public Type logic(ASTNode node){
+        return this;
+    }
+
+    @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);
     }

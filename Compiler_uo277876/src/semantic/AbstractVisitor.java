@@ -86,13 +86,13 @@ public abstract class AbstractVisitor<TP,TR> implements Visitor<TP,TR> {
 
     @Override
     public TR visit(Return rt, TP params) {
-        rt.accept(this,params);
+        rt.getExpression().accept(this,params);
         return null;
     }
 
     @Override
     public TR visit(While wh, TP params) {
-        wh.accept(this,params);
+        wh.getCondition().accept(this,params);
         for(Statement st : wh.getStatements()){
             st.accept(this,params);
         }

@@ -1,6 +1,7 @@
 package semantic;
 
 import ast.Expression;
+import ast.Type;
 import ast.definitions.FuncDefinition;
 import ast.expressions.*;
 import ast.statements.*;
@@ -9,11 +10,11 @@ import ast.types.DoubleType;
 import ast.types.ErrorType;
 import ast.types.IntType;
 
-public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
+public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
 
     // ------------------ EXPRESSIONS ---------------------
     @Override
-    public TR visit(Arithmetic a, TP params) {
+    public Void visit(Arithmetic a, Type params) {
         super.visit(a,params);
         a.setType(a.getLeft().getType().arithmetic(a.getRight().getType(),a));
         a.setLValue(false);
@@ -21,7 +22,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(ArrayAccess ac, TP params) {
+    public Void visit(ArrayAccess ac, Type params) {
         super.visit(ac,params);
         ac.setType(ac.getExpression1().getType().squareBrackets(ac.getExpression2().getType(),ac));
         ac.setLValue(true);
@@ -29,7 +30,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(Cast c, TP params) {
+    public Void visit(Cast c, Type params) {
         super.visit(c,params);
         c.setType(c.getType().canBeCastTo(c.getExpression().getType(),c));
         c.setLValue(false);
@@ -37,7 +38,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(CharLiteral cl, TP params) {
+    public Void visit(CharLiteral cl, Type params) {
         super.visit(cl,params);
         cl.setType(new CharType());
         cl.setLValue(false);
@@ -45,7 +46,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(Comparator c, TP params) {
+    public Void visit(Comparator c, Type params) {
         super.visit(c,params);
         c.setType(c.getLeft().getType().comparison(c.getRight().getType(),c));
         c.setLValue(false);
@@ -53,7 +54,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(FunctionInvocation fi, TP params) {
+    public Void visit(FunctionInvocation fi, Type params) {
         super.visit(fi,params);
         fi.setType(fi.getFunction().getType().parenthesis(fi.getParameters(),fi));
         fi.setLValue(false);
@@ -61,7 +62,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(IntLiteral il, TP params) {
+    public Void visit(IntLiteral il, Type params) {
         super.visit(il,params);
         il.setType(new IntType());
         il.setLValue(false);
@@ -69,7 +70,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(Logical l, TP params) {
+    public Void visit(Logical l, Type params) {
         super.visit(l,params);
         l.setType(l.getLeft().getType().logic(l.getRight().getType(),l));
         l.setLValue(false);
@@ -77,7 +78,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(RealLiteral rl, TP params) {
+    public Void visit(RealLiteral rl, Type params) {
         super.visit(rl,params);
         rl.setType(new DoubleType());
         rl.setLValue(false);
@@ -85,7 +86,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(StructAccess sa, TP params) {
+    public Void visit(StructAccess sa, Type params) {
         super.visit(sa,params);
         sa.setType(sa.getExpression().getType().dot(sa.getName(),sa));
         sa.setLValue(true);
@@ -93,7 +94,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(UnaryMinus um, TP params) {
+    public Void visit(UnaryMinus um, Type params) {
         super.visit(um,params);
         um.setType(um.getExpression().getType().arithmeticUnary(um));
         um.setLValue(false);
@@ -101,7 +102,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(UnaryNot un, TP params) {
+    public Void visit(UnaryNot un, Type params) {
         super.visit(un,params);
         un.setType(un.getExpression().getType().logic(un));
         un.setLValue(false);
@@ -109,7 +110,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(Variable v, TP params) {
+    public Void visit(Variable v, Type params) {
         super.visit(v,params);
         v.setType(v.getDefinition().getType());
         v.setLValue(true);
@@ -118,7 +119,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
 
     // ------------------ STATEMENTS ---------------------
     @Override
-    public TR visit(Assignment a, TP params) {
+    public Void visit(Assignment a, Type params) {
         super.visit(a,params);
         a.getLeft().setType(a.getLeft().getType().mustBePromoteTo(a.getRight().getType(),a));
         if(!a.getLeft().getLValue()){
@@ -129,7 +130,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(Conditional c, TP param) {
+    public Void visit(Conditional c, Type param) {
         super.visit(c, param);
         if(!c.getCondition().getType().isLogical()) {
             new ErrorType("There isn't a logical type", c.getCondition().getLine(), c.getCondition().getColumn());
@@ -138,44 +139,41 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     @Override
-    public TR visit(Input in, TP params) {
-        // No se hace el super porque para evaluar se tiene que recorrer el árbol
-        boolean valid = true;
+    public Void visit(Input in, Type params) {
+        // No se hace el super porque para asignar el lvalue se tiene que recorrer el árbol
         for (Expression e : in.getExpressions()) {
             e.accept(this, params);
             if (!e.getLValue())
-                valid = false;
+                new ErrorType("Variables not found", in.getLine(), in.getColumn());
         }
-        if (!valid)
-            new ErrorType("Variables not found", in.getLine(), in.getColumn());
 
         // Falta el asignar type
         return null;
     }
 
     @Override
-    public TR visit(Print p, TP params) {
-        boolean valid = true;
+    public Void visit(Print p, Type params) {
         for (Expression e : p.getExpressions()) {
             e.accept(this, params);
             if (!e.getLValue())
-                valid = false;
+                new ErrorType("Variables not found", p.getLine(), p.getColumn());
         }
-        if (!valid)
-            new ErrorType("Variables not found", p.getLine(), p.getColumn());
 
         // Falta el asignar type
         return null;
     }
 
     @Override
-    public TR visit(Return r, TP param) {
+    public Void visit(Return r, Type param) {
         super.visit(r, param);
-        // Falta el asignar type
+        if(!r.getExpression().getType().equals(param)){
+            new ErrorType("Type of return wrong", r.getLine(),r.getColumn());
+        }
+
         return null;
     }
 
-    public TR visit(While w, TP param) {
+    public Void visit(While w, Type param) {
         super.visit(w, param);
         if(!w.getCondition().getType().isLogical()) {
             new ErrorType("There isn't a logical type", w.getCondition().getLine(), w.getCondition().getColumn());
@@ -184,7 +182,7 @@ public class TypeCheckingVisitor<TP,TR> extends AbstractVisitor<TP,TR> {
     }
 
     // ------------------ DEFINITIONS ---------------------
-    public TR visit(FuncDefinition fd, TP param) {
+    public Void visit(FuncDefinition fd, Type param) {
         super.visit(fd, param);
         // Falta el asignar type
         return null;
