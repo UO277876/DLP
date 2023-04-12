@@ -18,7 +18,7 @@ public class CharType extends AbstractType {
     @Override
     public Type arithmetic(Type t, ASTNode node){
         if(t instanceof ErrorType) {
-            return this;
+            return t;
         }
 
         if (t instanceof CharType) {
@@ -36,7 +36,7 @@ public class CharType extends AbstractType {
     @Override
     public Type comparison(Type t, ASTNode node){
         if(t instanceof ErrorType) {
-            return this;
+            return t;
         }
 
         if (t instanceof CharType) {
@@ -48,15 +48,17 @@ public class CharType extends AbstractType {
 
     @Override
     public Type canBeCastTo(Type t, ASTNode node){
-        if(t instanceof CharType || t instanceof ErrorType)
-            return this;
+        if(t instanceof ErrorType || t instanceof CharType) {
+            return t;
+        }
+
         return super.canBeCastTo(t,node);
     }
 
     @Override
     public Type mustBePromoteTo(Type t, ASTNode node){
         if(t instanceof ErrorType || t instanceof CharType) {
-            return this;
+            return t;
         }
 
         return super.mustBePromoteTo(t,node);

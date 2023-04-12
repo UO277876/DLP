@@ -20,6 +20,10 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
 
     @Override
     public Type arithmetic(Type t, ASTNode node) {
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
         return new ErrorType("Incompatible type",node.getLine(),node.getColumn());
     }
 
@@ -30,11 +34,19 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
 
     @Override
     public Type comparison(Type t, ASTNode node) {
-        return new ErrorType("Type of the comparison incorrect", node.getLine(),node.getColumn());
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
+        return new ErrorType("Incompatible types in the comparison", node.getLine(),node.getColumn());
     }
 
     @Override
     public Type logic(Type t, ASTNode node) {
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
         return new ErrorType("There isn't a logical type",node.getLine(),node.getColumn());
     }
 
@@ -50,16 +62,28 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
 
     @Override
     public Type squareBrackets(Type t, ASTNode node) {
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
         return new ErrorType("The position must be an integer",t.getLine(),t.getColumn());
     }
 
     @Override
     public Type mustBePromoteTo(Type t, ASTNode node) {
-        return new ErrorType("Incompatible type",node.getLine(),node.getColumn());
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
+        return new ErrorType("Incompatible type of return",node.getLine(),node.getColumn());
     }
 
     @Override
     public Type canBeCastTo(Type t, ASTNode node) {
+        if(t instanceof ErrorType) {
+            return t;
+        }
+
         return new ErrorType("Only can cast primitive types",node.getLine(),node.getColumn());
     }
 
