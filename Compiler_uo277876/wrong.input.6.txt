@@ -1,10 +1,6 @@
-# Main program
-a:double;
-
-def f() : int{
-    return 3.5; # Error 1: return
-}
+a:int;
+b:int;
 
 def main(): {
-  print a >= 3; 	# Error 2
+  print a >= b;
  }

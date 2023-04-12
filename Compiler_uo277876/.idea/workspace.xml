@@ -6,89 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/ASTNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/AbstractASTNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/Definition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/Expression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/Statement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/definitions/AbstractDefinition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/definitions/FuncDefinition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/definitions/VarDefinition.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/AbstractExpression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/Arithmetic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/ArrayAccess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/Cast.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/CharLiteral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/Comparator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/FunctionInvocation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/IntLiteral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/Logical.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/RealLiteral.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/StructAccess.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/UnaryMinus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/UnaryNot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/Variable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/AbstractStatement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/Assignment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/Conditional.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/Input.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/Print.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/Return.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/While.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/AbstractType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/ArrayType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/ErrorType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/FunctionType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/RecordField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/RecordType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/VoidType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/errorhandler/ErrorHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/LexerHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/LexerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/LexicalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmBaseVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ExpressionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncParametersContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$MainDefinitionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ProgramContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$RecordFieldsContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ReturnTypeContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$Simple_typesContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$TypeContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VarDefinitionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/TestRigGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/TestRigTokens.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/TestRigTrace.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/AbstractVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/IdentificationVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/Visitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/symboltable/SymbolTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/symboltable/SymbolTableTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/AbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/AbstractType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrong.input.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.4.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wrong.input.6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +75,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="wrong.input.5.txt" />
+      <option name="PROGRAM_PARAMETERS" value="wrong.input.6.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
