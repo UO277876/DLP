@@ -16,8 +16,10 @@ public class DoubleType extends AbstractType{
 
     @Override
     public Type arithmetic(Type t, ASTNode node){
-        if (t instanceof DoubleType || t instanceof ErrorType)
+        if(t instanceof ErrorType || t instanceof DoubleType) {
             return t;
+        }
+
         return super.arithmetic(t,node);
     }
 
@@ -37,8 +39,10 @@ public class DoubleType extends AbstractType{
 
     @Override
     public Type canBeCastTo(Type t, ASTNode node){
-        if(t instanceof DoubleType || t instanceof ErrorType)
+        if(t instanceof ErrorType || t instanceof DoubleType) {
             return t;
+        }
+
         return super.canBeCastTo(t,node);
     }
 

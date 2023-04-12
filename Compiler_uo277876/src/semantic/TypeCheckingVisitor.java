@@ -1,16 +1,12 @@
 package semantic;
 
-import ast.Expression;
-import ast.Type;
+import ast.*;
 import ast.definitions.FuncDefinition;
 import ast.expressions.*;
 import ast.statements.*;
-import ast.types.CharType;
-import ast.types.DoubleType;
-import ast.types.ErrorType;
-import ast.types.IntType;
+import ast.types.*;
 
-public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
+public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
 
     // ------------------ EXPRESSIONS ---------------------
     @Override
@@ -139,10 +135,9 @@ public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
     }
 
     @Override
-    public Void visit(Input in, Type params) {
-        // No se hace el super porque para asignar el lvalue se tiene que recorrer el árbol
+    public Void visit(Input in, Type param) {
         for (Expression e : in.getExpressions()) {
-            e.accept(this, params);
+            e.accept(this, param);
             e.setType(e.getType().mustBePromoteTo(e.getType(),in));
         }
 
@@ -150,9 +145,9 @@ public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
     }
 
     @Override
-    public Void visit(Print p, Type params) {
+    public Void visit(Print p, Type param) {
         for (Expression e : p.getExpressions()) {
-            e.accept(this, params);
+            e.accept(this, param);
             e.setType(e.getType().mustBePromoteTo(e.getType(),p));
         }
 
@@ -162,9 +157,7 @@ public class TypeCheckingVisitor<Type,Void> extends AbstractVisitor<Type,Void> {
     @Override
     public Void visit(Return r, Type param) {
         super.visit(r, param);
-        if(!r.getExpression().getType().equals(param)){
-            new ErrorType("Type of return wrong", r.getLine(),r.getColumn());
-        }
+        r.getExpression().setType(r.getExpression().getType().mustBePromoteTo(param,r));
 
         return null;
     }

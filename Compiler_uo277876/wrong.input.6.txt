@@ -1,0 +1,7 @@
+def p(): double{
+  return 'a';
+}
+
+def main(): {
+  p();
+}

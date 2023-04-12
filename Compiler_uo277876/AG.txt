@@ -44,9 +44,9 @@ Producciones {
 Reglas {
     (1) expression2.type.mustBePromoteTo(expression1.type)
     (2) expression.type.logical()
-    (3) expression.type.mustBePromoteTo()
-    (4) expression.type.mustBePromoteTo()
-    (5) expression.type.mustBePromoteTo()
+    (3) expression.type.mustBePromoteTo(expression.type)
+    (4) expression.type.mustBePromoteTo(expression.type)
+    (5) expression.type.mustBePromoteTo(statement.type)
     (6) expression.type.logical()
 }
 
@@ -56,5 +56,5 @@ Producciones {
 }
 
 Reglas {
-    (1) statement*.foreach(statement -> statement.returnType = type)
+    (1) statement*.foreach(statement -> statement.returnType = definition.type.returnType)
 }

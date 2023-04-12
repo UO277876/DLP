@@ -29,11 +29,12 @@ public class ArrayType extends AbstractType{
 
     @Override
     public Type squareBrackets(Type t, ASTNode node){
-        if(t instanceof IntType) {
-            return of;
-        }
         if(t instanceof ErrorType) {
             return t;
+        }
+
+        if(t instanceof IntType) {
+            return of;
         }
 
         return super.squareBrackets(t,node);

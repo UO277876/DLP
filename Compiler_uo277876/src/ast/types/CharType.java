@@ -17,8 +17,10 @@ public class CharType extends AbstractType {
 
     @Override
     public Type arithmetic(Type t, ASTNode node){
-        if (t instanceof CharType || t instanceof ErrorType)
-            return t;
+        if (t instanceof CharType) {
+            return new IntType();
+        }
+
         return super.arithmetic(t,node);
     }
 
@@ -33,8 +35,8 @@ public class CharType extends AbstractType {
             return new IntType();
         }
 
-        if (t instanceof ErrorType) {
-            return t;
+        if (t instanceof CharType) {
+            return new IntType();
         }
 
         return super.comparison(t,node);

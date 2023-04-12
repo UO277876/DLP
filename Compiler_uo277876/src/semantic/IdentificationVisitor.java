@@ -1,7 +1,6 @@
 package semantic;
 
 import ast.Definition;
-import ast.Statement;
 import ast.definitions.FuncDefinition;
 import ast.definitions.VarDefinition;
 import ast.expressions.Variable;
@@ -18,7 +17,8 @@ public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
 
         Definition definition = st.find(v.getName());
         if(definition == null){
-            v.setDefinition(new VarDefinition(new ErrorType("Variable not found", v.getLine(), v.getColumn()),
+            v.setDefinition(new VarDefinition(new ErrorType("Variable " + v.getName() + " not found",
+                    v.getLine(), v.getColumn()),
                     "error", v.getLine(), v.getColumn()));
         } else {
             v.setDefinition(definition);

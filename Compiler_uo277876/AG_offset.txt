@@ -1,0 +1,22 @@
+P:
+(1) RecordType: type -> field*
+(2) RecordField: field -> ID type
+(3) FunctionType: type1 -> type2.vardefinition*
+
+R:
+------ Opción 1: Que lo calcule el padre ------
+(1) Calculando el offset del campo
+    int sumBytes = 0;
+    foreach(Field f: field*){
+        f.offset = sumBytes;
+        sumBytes += f.type.numberOfBytes();
+    }
+(2)
+
+------ Opción 2: Que lo calculen los hijos ------
+(1) sumBytes = 0
+(2) // int sumBytesRecordFields Es una variable global del visitor offset
+    field.offset = sumBytes;
+    ...
+
+ (3)
