@@ -17,7 +17,7 @@ public class DoubleType extends AbstractType{
     @Override
     public Type arithmetic(Type t, ASTNode node){
         if(t instanceof ErrorType || t instanceof DoubleType) {
-            return t;
+            return this;
         }
 
         return super.arithmetic(t,node);
@@ -31,7 +31,7 @@ public class DoubleType extends AbstractType{
     @Override
     public Type comparison(Type t, ASTNode node){
         if (t instanceof DoubleType || t instanceof ErrorType) {
-            return t;
+            return this;
         }
 
         return super.comparison(t,node);

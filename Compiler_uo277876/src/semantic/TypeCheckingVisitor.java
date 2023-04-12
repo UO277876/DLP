@@ -118,6 +118,7 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     public Void visit(Assignment a, Type params) {
         super.visit(a,params);
         a.getLeft().setType(a.getLeft().getType().mustBePromoteTo(a.getRight().getType(),a));
+
         if(!a.getLeft().getLValue()){
             new ErrorType("Cannot assign to the left anything that is not a variable or lValue",
                     a.getLine(), a.getColumn());

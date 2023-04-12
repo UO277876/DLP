@@ -5,6 +5,8 @@ import ast.definitions.FuncDefinition;
 import ast.definitions.VarDefinition;
 import ast.expressions.Variable;
 import ast.types.ErrorType;
+import ast.types.RecordField;
+import ast.types.RecordType;
 import symboltable.SymbolTable;
 
 public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
@@ -53,4 +55,6 @@ public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
 
         return null;
     }
+
+
 }

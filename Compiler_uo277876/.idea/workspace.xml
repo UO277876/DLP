@@ -5,30 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AG_offset.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MAPL.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapl/GVM.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapl/MAPL.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapl/TextVM.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wrong.input.6.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AG.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objetive.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetive.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objetivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetivo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/AbstractStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/statements/AbstractStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/ArrayType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/ArrayType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$BlockContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncParametersContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$FuncParametersContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$MainDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$MainDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ParametersContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ReturnTypeContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$ReturnTypeContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$StatementContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VarDefinitionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser$VarDefinitionContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/parser/PmmParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/IdentificationVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/IdentificationVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/statements/AbstractStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/statements/AbstractStatement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/types/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/ArrayType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/semantic/IdentificationVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/IdentificationVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrong.input.4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrong.input.6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/infer/Desktop",
+    "last_opened_file_path": "C:/Users/infer/Desktop/universidad/DLP/Practicas/entorno/DLP_practicas/Compiler_uo277876",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -97,7 +102,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="wrong.input.6.txt" />
+      <option name="PROGRAM_PARAMETERS" value="wrong.input.2.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,5 +143,21 @@
       <updated>1675958593812</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/semantic/IdentificationVisitor.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/semantic/AbstractVisitor.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

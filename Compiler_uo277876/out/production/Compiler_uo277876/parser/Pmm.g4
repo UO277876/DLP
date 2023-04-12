@@ -63,7 +63,7 @@ type returns [Type ast] locals [List<RecordField> rfs = new ArrayList<RecordFiel
        simple_types {$ast = $simple_types.ast;}
        |'[' INT_CONSTANT ']' type /* Seminario 2 */ {$ast = new ArrayType(LexerHelper.lexemeToInt($INT_CONSTANT.text),
                                                         $type.ast);}
-       | 'struct' '{' (recordFields{$rfs.addAll($recordFields.ast);})* '}' {$ast = new RecordType($rfs);}
+       | 'struct' '{' (recordFields{$rfs.addAll($recordFields.ast);}) '}' {$ast = new RecordType($rfs);}
        ;
 
 simple_types returns [Type ast]:
@@ -74,14 +74,25 @@ simple_types returns [Type ast]:
 
 recordFields returns [List<RecordField> ast = new ArrayList<>()] locals
                         [List<String> ids = new ArrayList<String>()]:
-       ID1=ID {$ids.add($ID1.text);}
-       (',' ID2=ID {$ids.add($ID2.text);})*
+      ( ID1=ID {if($ids.contains($ID1.text)){
+                                        new ErrorType("Variable in struct with name " + $ID1.text + " is already defined",
+                                                      $ID1.getLine(),$ID1.getCharPositionInLine()+1);
+                                    } else {
+                                        $ids.add($ID1.text);}
+                         }
+       (',' ID2=ID {if($ids.contains($ID2.text)){
+                        new ErrorType("Variable in struct with name " + $ID2.text + " is already defined",
+                                      $ID2.getLine(),$ID2.getCharPositionInLine()+1);
+                    } else {
+                        $ids.add($ID2.text);}
+         }
+       )*
        ':' type {for(String id: $ids) {
                     $ast.add(
                         new RecordField(id,$type.ast,$ID1.getLine(),$ID1.getCharPositionInLine()+1));
                   }
                 }
-       ';'
+       ';')*
        ;
 
 // --------------------- Definitions ---------------------------

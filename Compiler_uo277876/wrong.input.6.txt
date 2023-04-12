@@ -1,7 +1,10 @@
-def p(): double{
-  return 'a';
-}
+tuple: struct {
+	key:int;
+	value:int;
+	key:double; # Error: duplicated field
+};
 
+# Main program
 def main(): {
-  p();
+	tuple.key = 0;
 }

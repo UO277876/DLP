@@ -14,6 +14,9 @@ public class RecordField extends AbstractASTNode {
         this.typeOf =typeOf;
     }
 
+    public void setType(Type type){
+        this.typeOf = type;
+    }
     public Type getType() {
         return typeOf;
     }
