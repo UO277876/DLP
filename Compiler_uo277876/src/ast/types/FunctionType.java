@@ -29,10 +29,12 @@ public class FunctionType extends AbstractType {
 
     @Override
     public Type parenthesis(List<Expression> params, ASTNode a){
+        // Para comprobar que hay el número de parámetros que necesita la función
         if (params.size() != parameters.size()) {
             return new ErrorType("Missing a parameter", a.getLine(), a.getColumn());
         }
 
+        // Para comprobar que el tipo de los parámetros pasados son coincidentes con los de la función
         for (int i = 0; i < params.size(); i++) {
             if(!params.get(i).getType().equals(parameters.get(i).getType()))
                 return new ErrorType("The type of the parameters don't are the same",

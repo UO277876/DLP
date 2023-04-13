@@ -29,15 +29,16 @@ public class ArrayType extends AbstractType{
 
     @Override
     public Type squareBrackets(Type t, ASTNode node){
-        if(t instanceof ErrorType) {
-            return this;
-        }
-
         if(t instanceof IntType) {
             return of;
         }
 
         return super.squareBrackets(t,node);
+    }
+
+    @Override
+    public int numberOfBytes(){
+        return of.numberOfBytes() * size; // Hay que reserva el número de bytes que ocupa su tipo * el tamaño del array
     }
 
     @Override

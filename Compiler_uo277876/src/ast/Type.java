@@ -3,6 +3,7 @@ package ast;
 import java.util.List;
 
 public interface Type extends ASTNode {
+    // ---------- Para el TypeCheckingVisitor ----------
     public boolean isLogical();
 
     public Type arithmetic(Type t, ASTNode node); // Operaciones aritméticas
@@ -23,4 +24,6 @@ public interface Type extends ASTNode {
 
     public Type parenthesis(List<Expression> params, ASTNode node);
 
+    // ---------- Para calcular el offset ----------
+    public int numberOfBytes();
 }

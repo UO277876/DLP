@@ -19,7 +19,7 @@ public abstract class AbstractExpression extends AbstractASTNode implements Expr
     }
 
     @Override
-    public void setLValue(boolean lvalue){
+    public void setLValue(boolean lValue){
         this.lValue = lValue;
 }
 

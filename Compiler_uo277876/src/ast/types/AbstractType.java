@@ -66,7 +66,7 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
             return t;
         }
 
-        return new ErrorType("The position must be an integer",t.getLine(),t.getColumn());
+        return new ErrorType("The array acces is not allowed",node.getLine(),node.getColumn());
     }
 
     @Override
@@ -75,7 +75,7 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
             return t;
         }
 
-        return new ErrorType("Incompatible type of return",node.getLine(),node.getColumn());
+        return new ErrorType("Incompatible type",node.getLine(),node.getColumn());
     }
 
     @Override
@@ -90,6 +90,11 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
     @Override
     public Type parenthesis(List<Expression> params, ASTNode node) {
         return null;
+    }
+
+    @Override
+    public int numberOfBytes(){
+        return 0;
     }
 
 }

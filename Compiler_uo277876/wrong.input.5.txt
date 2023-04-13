@@ -1,4 +1,3 @@
-
 v:[10]int ;
 
 def main(): {

@@ -1,6 +1,5 @@
-a:int;
-b:int;
+character:char;
 
 def main(): {
-  print a >= b;
+  character = 8.5;	# Error 1
  }

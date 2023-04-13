@@ -16,7 +16,7 @@ public class IntType extends AbstractType{
 
     @Override
     public Type arithmetic(Type t, ASTNode node){
-        if(t instanceof ErrorType || t instanceof IntType) {
+        if(t instanceof IntType) {
             return t;
         }
 
@@ -30,7 +30,7 @@ public class IntType extends AbstractType{
 
     @Override
     public Type comparison(Type t, ASTNode node){
-        if (t instanceof IntType || t instanceof ErrorType) {
+        if (t instanceof IntType) {
             return t;
         }
 
@@ -39,7 +39,7 @@ public class IntType extends AbstractType{
 
     @Override
     public Type canBeCastTo(Type t, ASTNode node){
-        if(t instanceof ErrorType || t instanceof IntType) {
+        if(t instanceof IntType) {
             return t;
         }
 
@@ -48,7 +48,7 @@ public class IntType extends AbstractType{
 
     @Override
     public Type mustBePromoteTo(Type t, ASTNode node){
-        if(t instanceof ErrorType || t instanceof IntType) {
+        if(t instanceof IntType) {
             return t;
         }
 
@@ -67,6 +67,11 @@ public class IntType extends AbstractType{
     @Override
     public Type logic(ASTNode node){
         return this;
+    }
+
+    @Override
+    public int numberOfBytes(){
+        return 2;
     }
 
     @Override

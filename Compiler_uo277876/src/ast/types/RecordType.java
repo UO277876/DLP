@@ -29,6 +29,18 @@ public class RecordType extends AbstractType {
     }
 
     @Override
+    public int numberOfBytes() {
+        // El número de bytes es el sumatorio de todos los RecordFields del struct
+        int numBytes = 0;
+
+        for(RecordField rf: fields) {
+            numBytes += rf.getType().numberOfBytes();
+        }
+
+        return numBytes;
+    }
+
+    @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);
     }

@@ -117,11 +117,12 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     @Override
     public Void visit(Assignment a, Type params) {
         super.visit(a,params);
-        a.getLeft().setType(a.getLeft().getType().mustBePromoteTo(a.getRight().getType(),a));
 
         if(!a.getLeft().getLValue()){
             new ErrorType("Cannot assign to the left anything that is not a variable or lValue",
                     a.getLine(), a.getColumn());
+        } else {
+            a.getLeft().setType(a.getLeft().getType().mustBePromoteTo(a.getRight().getType(),a));
         }
         return null;
     }
@@ -139,7 +140,11 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     public Void visit(Input in, Type param) {
         for (Expression e : in.getExpressions()) {
             e.accept(this, param);
-            e.setType(e.getType().mustBePromoteTo(e.getType(),in));
+            if(e.getLValue()){
+                e.setType(e.getType().mustBePromoteTo(e.getType(),in));
+            } else{
+                new ErrorType("The input isn´t a lvalue", in.getLine(), in.getColumn());
+            }
         }
 
         return null;
@@ -149,7 +154,11 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     public Void visit(Print p, Type param) {
         for (Expression e : p.getExpressions()) {
             e.accept(this, param);
-            e.setType(e.getType().mustBePromoteTo(e.getType(),p));
+            if(e.getLValue()){
+                e.setType(e.getType().mustBePromoteTo(e.getType(),p));
+            } else{
+                new ErrorType("The print isn´t a lvalue", p.getLine(), p.getColumn());
+            }
         }
 
         return null;
