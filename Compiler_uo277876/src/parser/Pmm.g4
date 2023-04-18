@@ -74,22 +74,16 @@ simple_types returns [Type ast]:
 
 recordFields returns [List<RecordField> ast = new ArrayList<>()] locals
                         [List<String> ids = new ArrayList<String>()]:
-      ( ID1=ID {if($ids.contains($ID1.text)){
-                                        new ErrorType("Variable in struct with name " + $ID1.text + " is already defined",
-                                                      $ID1.getLine(),$ID1.getCharPositionInLine()+1);
-                                    } else {
-                                        $ids.add($ID1.text);}
-                         }
-       (',' ID2=ID {if($ids.contains($ID2.text)){
-                        new ErrorType("Variable in struct with name " + $ID2.text + " is already defined",
-                                      $ID2.getLine(),$ID2.getCharPositionInLine()+1);
-                    } else {
-                        $ids.add($ID2.text);}
-         }
-       )*
+      (ID1=ID {$ids.add($ID1.text);}
+       (',' ID2=ID {$ids.add($ID2.text);})*
        ':' type {for(String id: $ids) {
-                    $ast.add(
-                        new RecordField(id,$type.ast,$ID1.getLine(),$ID1.getCharPositionInLine()+1));
+                    RecordField rf = new RecordField(id,$type.ast,$ID1.getLine(),$ID1.getCharPositionInLine()+1);
+                    if($ast.contains(rf)){
+                        new ErrorType("Variable in struct with name " + $ID1.text + " is already defined",
+                                                                              $ID1.getLine(),$ID1.getCharPositionInLine()+1);
+                    } else {
+                        $ast.add(rf);
+                    }
                   }
                 }
        ';')*

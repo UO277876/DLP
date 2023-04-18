@@ -18,7 +18,7 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
         int structOffset = 0;
 
         for (RecordField rf : rt.getFields()) {
-            structOffset += rf.accept(this, structOffset);
+            structOffset = params + rf.accept(this, structOffset);
         }
 
         return null;
