@@ -36,9 +36,12 @@ public class FunctionType extends AbstractType {
 
         // Para comprobar que el tipo de los parámetros pasados son coincidentes con los de la función
         for (int i = 0; i < params.size(); i++) {
-            if(!params.get(i).getType().equals(parameters.get(i).getType()))
-                return new ErrorType("The type of the parameters don't are the same",
-                        a.getLine(),a.getColumn());
+            Type type_parameter = params.get(i).getType().mustBePromoteTo(parameters.get(i).getType(),a);
+            if(type_parameter instanceof ErrorType) {
+                //return new ErrorType("The type of the parameters don't are the same",
+                //        a.getLine(), a.getColumn());
+                return type_parameter;
+            }
         }
 
         return returnType;

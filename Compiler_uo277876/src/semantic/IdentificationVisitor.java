@@ -5,16 +5,14 @@ import ast.definitions.FuncDefinition;
 import ast.definitions.VarDefinition;
 import ast.expressions.Variable;
 import ast.types.ErrorType;
-import ast.types.RecordField;
-import ast.types.RecordType;
 import symboltable.SymbolTable;
 
-public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
+public class IdentificationVisitor extends AbstractVisitor<Void, Void>{
 
     SymbolTable st = new SymbolTable();
 
     @Override
-    public TR visit(Variable v, TP params) {
+    public Void visit(Variable v, Void params) {
         super.visit(v, params);
 
         Definition definition = st.find(v.getName());
@@ -30,7 +28,7 @@ public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
     }
 
     @Override
-    public TR visit(VarDefinition vd, TP params) {
+    public Void visit(VarDefinition vd, Void params) {
         super.visit(vd, params);
         boolean canInsert = st.insert(vd);
         if(!canInsert){
@@ -42,7 +40,7 @@ public class IdentificationVisitor<TP, TR> extends AbstractVisitor<TP, TR>{
     }
 
     @Override
-    public TR visit(FuncDefinition fd, TP params) {
+    public Void visit(FuncDefinition fd, Void params) {
         boolean canInsert = st.insert(fd);
         if(!canInsert){
             new ErrorType("Function name " + fd.getName() + " already defined",

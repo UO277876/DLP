@@ -181,9 +181,9 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     }
 
     // ------------------ DEFINITIONS ---------------------
-    public Void visit(FuncDefinition fd, Type param) {
-        super.visit(fd, param);
-        // Falta el asignar type
+    public Void visit(FuncDefinition fd, Type params) {
+        //fd.getType().accept(this,params);
+        super.visit(fd,((FunctionType)fd.getType()).getReturnType());
         return null;
     }
 }

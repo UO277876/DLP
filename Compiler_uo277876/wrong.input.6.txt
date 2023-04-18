@@ -1,5 +1,7 @@
-character:char;
+def f(a:int): int {
+ return 3;
+}
 
 def main(): {
-  character = 8.5;	# Error 1
+  f('a');
  }

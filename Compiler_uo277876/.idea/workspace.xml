@@ -5,31 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DLP_uo277876.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_uo277876.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ast_uo277876.png" beforeDir="false" afterPath="$PROJECT_DIR$/ast_uo277876.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/AbstractExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/expressions/AbstractExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/AbstractType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/AbstractType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/ArrayType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/ArrayType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/definitions/VarDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/VarDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expressions/AbstractExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/AbstractExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/AbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/AbstractType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/ArrayType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/types/FunctionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/FunctionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/semantic/IdentificationVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/IdentificationVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrong.input.5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.5.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wrong.input.6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,16 +121,5 @@
       <updated>1675958593812</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/semantic/AbstractVisitor.java</url>
-          <line>224</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
