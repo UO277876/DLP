@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DLP_uo277876.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/codegenerator/AbstractCGVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/codegenerator/AddressCGVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/codegenerator/ValueCGVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DLP_uo277876.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_uo277876.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ast_uo277876.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objetive.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetive.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objetivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/objetivo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/OffSetVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/OffSetVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/AbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/AbstractType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/VoidType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/VoidType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/PmmParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/PmmParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrong.input.6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +97,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="input.txt" />
+      <option name="PROGRAM_PARAMETERS" value="input.txt output.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

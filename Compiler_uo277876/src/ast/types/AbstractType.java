@@ -4,6 +4,7 @@ import ast.ASTNode;
 import ast.AbstractASTNode;
 import ast.Expression;
 import ast.Type;
+import codegenerator.CodeGenerator;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
 
     @Override
     public Type dot(String field, ASTNode node) {
-        return new ErrorType("Missing field",node.getLine(),node.getColumn());
+        return new ErrorType("Missing field " + field,node.getLine(),node.getColumn());
     }
 
     @Override
@@ -93,8 +94,13 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
     }
 
     @Override
-    public int numberOfBytes(){
-        return 0;
+    public int numberOfBytes() throws IllegalStateException {
+        throw new IllegalStateException("NumberOfBytes not found");
+    }
+
+    @Override
+    public int suffix() throws IllegalStateException {
+        throw new IllegalStateException("Suffix not found");
     }
 
 }

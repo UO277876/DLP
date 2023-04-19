@@ -722,18 +722,18 @@ public class PmmParser extends Parser {
 				setState(140);
 				((RecordFieldsContext)_localctx).ID1 = match(ID);
 
-				                    boolean repeated1 = false;
+				                    boolean repeated = false;
 				                    for(RecordField rf: _localctx.ast)
 				                    {
 				                        if(rf.getName().equals((((RecordFieldsContext)_localctx).ID1!=null?((RecordFieldsContext)_localctx).ID1.getText():null)))
 				                        {
 				                            new ErrorType("Variable in struct with name " + (((RecordFieldsContext)_localctx).ID1!=null?((RecordFieldsContext)_localctx).ID1.getText():null) + " is already defined",
 				                                            ((RecordFieldsContext)_localctx).ID1.getLine(),((RecordFieldsContext)_localctx).ID1.getCharPositionInLine()+1);
-				                            repeated1 = true;
+				                            repeated = true;
 				                            break;
 				                        }
 				                    }
-				                    if (!repeated1)
+				                    if (!repeated)
 				                    {
 				                        _localctx.ids.add((((RecordFieldsContext)_localctx).ID1!=null?((RecordFieldsContext)_localctx).ID1.getText():null));
 				                    }

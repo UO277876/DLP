@@ -9,6 +9,11 @@ public class VoidType extends AbstractType {
     }
 
     @Override
+    public int numberOfBytes() throws IllegalStateException {
+        return 0;
+    }
+
+    @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);
     }

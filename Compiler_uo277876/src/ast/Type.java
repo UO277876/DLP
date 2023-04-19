@@ -26,4 +26,7 @@ public interface Type extends ASTNode {
 
     // ---------- Para calcular el offset ----------
     public int numberOfBytes();
+
+    // ---------- Para la generacion de codigo ----------
+    public int suffix();
 }

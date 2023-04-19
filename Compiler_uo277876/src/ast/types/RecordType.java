@@ -30,7 +30,7 @@ public class RecordType extends AbstractType {
 
     @Override
     public int numberOfBytes() {
-        // El número de bytes es el sumatorio de todos los RecordFields del struct
+        // El número de bytes es el sumatorio de todos los RecordFields
         int numBytes = 0;
 
         for(RecordField rf: fields) {
