@@ -1,8 +1,12 @@
+# Global variables
+i: int;
+
 def main(): {
   pair: struct {
-    var1:int;
-    var2:char;
-    var3:double;
+    integer:int;
+    character:char;
   };
+
+  i = 3;
 
  }

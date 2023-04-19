@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.g4" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.g4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Pmm.interp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Pmm.interp" afterDir="false" />
@@ -79,7 +80,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="wrong.input.6.txt" />
+      <option name="PROGRAM_PARAMETERS" value="input.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,21 +121,5 @@
       <updated>1675958593812</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

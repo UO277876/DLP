@@ -74,20 +74,50 @@ simple_types returns [Type ast]:
 
 recordFields returns [List<RecordField> ast = new ArrayList<>()] locals
                         [List<String> ids = new ArrayList<String>()]:
-      (ID1=ID {$ids.add($ID1.text);}
-       (',' ID2=ID {$ids.add($ID2.text);})*
-       ':' type {for(String id: $ids) {
-                    RecordField rf = new RecordField(id,$type.ast,$ID1.getLine(),$ID1.getCharPositionInLine()+1);
-                    if($ast.contains(rf)){
-                        new ErrorType("Variable in struct with name " + $ID1.text + " is already defined",
-                                                                              $ID1.getLine(),$ID1.getCharPositionInLine()+1);
-                    } else {
-                        $ast.add(rf);
+        (ID1=ID {
+                    boolean repeated1 = false;
+                    for(RecordField rf: $ast)
+                    {
+                        if(rf.getName().equals($ID1.text))
+                        {
+                            new ErrorType("Variable in struct with name " + $ID1.text + " is already defined",
+                                            $ID1.getLine(),$ID1.getCharPositionInLine()+1);
+                            repeated1 = true;
+                            break;
+                        }
                     }
-                  }
+                    if (!repeated1)
+                    {
+                        $ids.add($ID1.text);
+                    }
                 }
-       ';')*
+        (','ID2=ID {
+                       boolean repeated2 = false;
+                       for(RecordField rf: $ast)
+                       {
+                           if(rf.getName().equals($ID2.text))
+                           {
+                               new ErrorType("Variable in struct with name " + $ID2.text + " is already defined",
+                                              $ID2.getLine(),$ID2.getCharPositionInLine()+1);
+                               repeated2 = true;
+                               break;
+                           }
+                       }
+                       if (!repeated2)
+                       {
+                           $ids.add($ID2.text);
+                       }
+                   }
+        )*
+        ':' type ';' {  for(String id: $ids){
+                            $ast.add(new RecordField(id, $type.ast,
+                                $ID1.getLine(),$ID1.getCharPositionInLine()));
+                        }
+                        $ids = new ArrayList<String>();
+                     }
+        )*
        ;
+
 
 // --------------------- Definitions ---------------------------
 varDefinition returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()] locals
@@ -95,7 +125,7 @@ varDefinition returns [List<VarDefinition> ast = new ArrayList<VarDefinition>()]
     /* ID ':' type ';' | ID ',' varDefinition; */
        ID1=ID {$ids.add($ID1.text);}
        (',' ID2=ID { if($ids.contains($ID2.text)){
-                        new ErrorType("Variable with name " + $ID2.text + " is already defined.",
+                        new ErrorType("Variable with name " + $ID2.text + " is already defined",
                             $ID2.getLine(),$ID2.getCharPositionInLine()+1);
                      } else {
                             $ids.add($ID2.text);}

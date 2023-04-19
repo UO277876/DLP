@@ -10,15 +10,15 @@ import semantic.AbstractVisitor;
 
 public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
 
-    private int globalVarOffset=0; // Para las variables globales, se usa un parámetro global en el Visitor
+    private int bytesGlobalSum=0; // Para las variables globales, se usa un parámetro global en el Visitor
 
     @Override
     public Integer visit(RecordType rt, Integer params) {
         // Para el sumatorio de todos los campos que lo componen
-        int structOffset = 0;
+        int bytesFieldsSum = 0;
 
         for (RecordField rf : rt.getFields()) {
-            structOffset = params + rf.accept(this, structOffset);
+            bytesFieldsSum = params + rf.accept(this, bytesFieldsSum);
         }
 
         return null;
@@ -39,8 +39,8 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
         if (vd.getScope() == 0) {
             // Para las variables globales que empiezan en 0, no devuelve nada porque se queda en al variable
             // del Visitor
-            vd.setOffset(globalVarOffset);
-            globalVarOffset += vd.getType().numberOfBytes();
+            vd.setOffset(bytesGlobalSum);
+            bytesGlobalSum += vd.getType().numberOfBytes();
         } else {
                 Integer offset = null;
                 if(vd.getScope() == 1){
@@ -65,29 +65,30 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
         // BP + Sumatorio de los parámetros posteriores declarados (parámetros a su derecha)
         // El primer parámetro declarado despues de la suma de 4 es el ÚLTIMO parámetro declarado
         ft.getReturnType().accept(this, params);
+        int paramsBytesSum = 0;
         for (int i = ft.getParameters().size() - 1; i >= 0; i--) {
-            params = ft.getParameters().get(i).accept(this, params);
+            VarDefinition vardef = ft.getParameters().get(i);
+            vardef.setOffset(4+paramsBytesSum);
+            paramsBytesSum += vardef.getType().numberOfBytes();
         }
 
-        return params-4;
+        return paramsBytesSum;
     }
 
     @Override
     public Integer visit(FuncDefinition fd, Integer params) {
-        fd.setScope(fd.getType().accept(this, 4)); // Hay que cambiar el ámbito
+        fd.getType().accept(this, 4); // Hay que cambiar el ámbito
 
         int sumBytesScope = 0;
         Integer localVarBytes = null;
 
-        for (Statement st :fd.getStatements()) { // VARIABLES LOCALES: BP - sumatorio variables anteriores (y ella misma)
-            localVarBytes = st.accept(this, sumBytesScope);
+        for (VarDefinition vf :fd.getVarDefinitions()) { // VARIABLES LOCALES: BP - sumatorio variables anteriores (y ella misma)
+            localVarBytes = vf.accept(this, sumBytesScope);
             if (localVarBytes != null) // En caso de que sean sentencias
                 sumBytesScope = localVarBytes;
         }
 
-
-        fd.setBytesParams(sumBytesScope);
-
+        //fd.setBytesParams(sumBytesScope);
         return null;
     }
 

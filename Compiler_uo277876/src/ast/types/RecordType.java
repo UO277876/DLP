@@ -20,9 +20,9 @@ public class RecordType extends AbstractType {
 
     @Override
     public Type dot(String field, ASTNode node) {
-        for (RecordField f : fields) {
-            if (f.getName().equals(field))
-                return f.getType();
+        for (RecordField rf : fields) {
+            if (rf.getName().equals(field))
+                return rf.getType();
         }
 
         return super.dot(field,node);
