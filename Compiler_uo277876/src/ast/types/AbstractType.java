@@ -99,7 +99,7 @@ public abstract class AbstractType extends AbstractASTNode implements Type {
     }
 
     @Override
-    public int suffix() throws IllegalStateException {
+    public char suffix() throws IllegalStateException {
         throw new IllegalStateException("Suffix not found");
     }
 

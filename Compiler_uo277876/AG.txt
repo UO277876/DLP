@@ -1,6 +1,6 @@
 // EXPRESSION
 Producciones {
-    (1) Arithmetic: expression1 -> expression2 (+|-|*|/) expression3
+    (1) Arithmetic: expression1 -> expression2 operator=(+|-|*|/|%) expression3
     (2) ArrayAccess: expression1 -> expression2 expression3
     (3) Cast: expression1 -> type expression2
     (4) CharLiteral: expression -> CHAR

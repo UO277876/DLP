@@ -28,5 +28,5 @@ public interface Type extends ASTNode {
     public int numberOfBytes();
 
     // ---------- Para la generacion de codigo ----------
-    public int suffix();
+    public char suffix();
 }

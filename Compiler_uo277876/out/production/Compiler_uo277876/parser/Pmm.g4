@@ -75,18 +75,18 @@ simple_types returns [Type ast]:
 recordFields returns [List<RecordField> ast = new ArrayList<>()] locals
                         [List<String> ids = new ArrayList<String>()]:
         (ID1=ID {
-                    boolean repeated1 = false;
+                    boolean repeated = false;
                     for(RecordField rf: $ast)
                     {
                         if(rf.getName().equals($ID1.text))
                         {
                             new ErrorType("Variable in struct with name " + $ID1.text + " is already defined",
                                             $ID1.getLine(),$ID1.getCharPositionInLine()+1);
-                            repeated1 = true;
+                            repeated = true;
                             break;
                         }
                     }
-                    if (!repeated1)
+                    if (!repeated)
                     {
                         $ids.add($ID1.text);
                     }
