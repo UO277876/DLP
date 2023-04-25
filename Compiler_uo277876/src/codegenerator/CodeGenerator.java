@@ -68,7 +68,7 @@ public class CodeGenerator {
     /**
      * Introduce una dirección (2 bytes) en la pila
      */
-    public void pushaBP(int dir) {
+    public void pusha(int dir) {
         out.println("\tpusha\t" + dir);
         out.flush();
     }
@@ -76,7 +76,7 @@ public class CodeGenerator {
     /**
      * Introduce el valor del registro bp (2 bytes)
      */
-    public void pusha() {
+    public void pushBP() {
         out.println("\tpusha\t");
         out.flush();
     }

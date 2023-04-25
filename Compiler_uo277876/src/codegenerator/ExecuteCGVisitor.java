@@ -1,10 +1,10 @@
 package codegenerator;
 
 import ast.Definition;
+import ast.Expression;
 import ast.Program;
-import ast.definitions.FuncDefinition;
-import ast.definitions.VarDefinition;
-import ast.expressions.Arithmetic;
+import ast.definitions.*;
+import ast.statements.*;
 
 public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
 
@@ -14,7 +14,7 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
     public ExecuteCGVisitor(CodeGenerator cg) {
         super(cg); // Para tener un CodeGenerator común a los 3 visitors se le deja al Abstract
         this.vv = new ValueCGVisitor(cg);
-        this.av = new AddressCGVisitor(cg);
+        this.av = new AddressCGVisitor(cg, vv);
     }
 
     /**
@@ -75,6 +75,46 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
     }
 
     // ------------------ STATEMENTS -------------------
+    /**
+     execute[[Print: statement -> expressions*]]()=
+         for(Expresion expr : expressions*){
+            value[[expr]]
+            <out> expr.type.suffix
+         }
+     **/
+    @Override
+    public Void visit(Print p, Void params) {
+        for(Expression expr : p.getExpressions()){
+            expr.accept(vv,params);
+            cg.out(expr.getType());
+        }
+        return null;
+    }
 
+    /**
+     execute[[Input: statement -> expressions*]]()=
+         for(Expresion expr : expressions*){
+             address[[expr]]
+             <in> expr.type.suffix
+            <store> expr.type.suffix
+        }
+     **/
+    @Override
+    public Void visit(Input i, Void params) {
+        for(Expression expr : i.getExpressions()){
+            expr.accept(av,params);
+            cg.in(expr.getType());
+            cg.store(expr.getType());
+        }
+        return null;
+    }
+
+    /**
+     execute[[Return: statement -> expression]]()=
+     **/
+    @Override
+    public Void visit(Return r, Void params) {
+        return null;
+    }
 
 }

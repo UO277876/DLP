@@ -35,8 +35,8 @@ Reglas {
 Producciones {
     (1) Assignment: statement -> expression1 expression2
     (2) Conditional: statement1 -> expression statement2* statement3*
-    (3) Input: statement -> expression
-    (4) Print: statement -> expression
+    (3) Input: statement -> expressions*
+    (4) Print: statement -> expressions*
     (5) Return: statement -> expression
     (6) While: statement1 -> expression statement2*
 }
