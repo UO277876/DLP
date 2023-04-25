@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AG.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegenerator/AddressCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/AddressCGVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/ValueCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/ValueCGVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

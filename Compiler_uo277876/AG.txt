@@ -52,9 +52,9 @@ Reglas {
 
 // DEFINITION
 Producciones {
-    (1) FuncDefinition: definition1 -> type ID definition2* statement*
+    (1) FuncDefinition: definition1 -> type ID definitions2* statements*
 }
 
 Reglas {
-    (1) statement*.foreach(statement -> statement.returnType = definition.type.returnType)
+    (1) statements*.foreach(statement -> statement.returnType = definition.type.returnType)
 }

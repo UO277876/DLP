@@ -50,12 +50,7 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     /**
     execute[[FuncDefinition: definition1 -> type ID definition2* statement*]]()=
-        {ID}<:>
-        < ' * Parameters>
-        for(Definition d: definiton2*)
-            if (def is VarDefinition)
-                Execute[[def]]()
-        < ' * Local Variables>
+
      **/
     @Override
     public Void visit(FuncDefinition fd, Void params) {
@@ -96,7 +91,7 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
          for(Expresion expr : expressions*){
              address[[expr]]
              <in> expr.type.suffix
-            <store> expr.type.suffix
+             <store> expr.type.suffix
         }
      **/
     @Override
@@ -114,6 +109,19 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
      **/
     @Override
     public Void visit(Return r, Void params) {
+        return null;
+    }
+
+    /**
+    execute[[Assignment: statement -> expression1 expression2]]() =
+        address[[expression1]]()
+        value[[expression2]]()
+        <store>expression1.type.suffix
+     */
+    public Void visit(Assignment a, Void params) {
+        a.getLeft().accept(this.av, params);
+        a.getRight().accept(this.vv, params);
+        cg.store(a.getLeft().getType());
         return null;
     }
 
