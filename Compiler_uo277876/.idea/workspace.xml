@@ -6,23 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/AbstractVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/AbstractVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/TypeCheckingVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/symboltable/SymbolTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/symboltable/SymbolTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/expressions/Cast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/expressions/Cast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/AbstractType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/AbstractType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/AddressCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/AddressCGVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegenerator/ValueCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/ValueCGVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/semantic/AbstractVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/AbstractVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/symboltable/SymbolTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/symboltable/SymbolTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +32,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/infer/Desktop/universidad/DLP/Practicas/entorno/DLP_practicas/Compiler_uo277876&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/infer/Desktop",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\infer\Desktop\universidad\DLP\Practicas\entorno\DLP_practicas\Compiler_uo277876" />
@@ -143,16 +127,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/semantic/TypeCheckingVisitor.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

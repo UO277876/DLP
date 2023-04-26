@@ -59,7 +59,7 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     /**
      value[[ArrayAccess: expression1 -> expression2 expression3]]()=
         address[[expression1]]
-        <load> expression1.type.suffix
+        <load>
      **/
     @Override
     public Void visit(ArrayAccess ac, Void params) {
@@ -70,12 +70,14 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     /**
      value[[Cast: expression1 -> type expression2]]()=
-        value[[expression2]]
-        expression2.type.canBeCast(type)
+        value[[expression2]]()
+
      **/
     @Override
     public Void visit(Cast c, Void params) {
+        // El convertidor de cast se hace en el codeGenerator
         c.getExpression().accept(this.av, params);
+
         return null;
     }
 
