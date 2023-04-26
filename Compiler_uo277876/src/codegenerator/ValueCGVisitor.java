@@ -58,10 +58,13 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     /**
      value[[ArrayAccess: expression1 -> expression2 expression3]]()=
-
+        address[[expression1]]
+        <load> expression1.type.suffix
      **/
     @Override
     public Void visit(ArrayAccess ac, Void params) {
+        ac.accept(av,params);
+        cg.load(ac.getType());
         return null;
     }
 
@@ -193,9 +196,13 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     /**
      value[[StructAccess: expression1 -> ID expression2]]()=
+        address[[expression1]]
+        <load> expression1.type.suffix
      **/
     @Override
     public Void visit(StructAccess sa, Void params) {
+        sa.accept(av,params);
+        cg.load(sa.getType());
         return null;
     }
 

@@ -117,7 +117,7 @@ public abstract class AbstractVisitor<TP,TR> implements Visitor<TP,TR> {
 
     @Override
     public TR visit(Cast c, TP params) {
-        c.getType().accept(this,params);
+        c.getTypeCast().accept(this,params);
         c.getExpression().accept(this,params);
         return null;
     }

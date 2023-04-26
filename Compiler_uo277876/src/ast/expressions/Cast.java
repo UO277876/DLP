@@ -6,17 +6,17 @@ import semantic.Visitor;
 
 public class Cast extends AbstractExpression{
 
-    private Type type;
+    private Type typeCast;
     private Expression expression;
 
-    public Cast(Type type, Expression expression, int line, int column) {
+    public Cast(Type typeCast, Expression expression, int line, int column) {
         super(line, column);
-        this.type = type;
+        this.typeCast = typeCast;
         this.expression = expression;
     }
 
-    public Type getType(){
-        return type;
+    public Type getTypeCast(){
+        return typeCast;
     }
 
     public Expression getExpression(){

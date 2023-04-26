@@ -40,6 +40,16 @@ public class RecordType extends AbstractType {
         return numBytes;
     }
 
+    public int getField(String name){
+        for(RecordField field : fields){
+            if(field.getName().equals(name)){
+                return field.getOffset();
+            }
+        }
+
+        return -1;
+    }
+
     @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);

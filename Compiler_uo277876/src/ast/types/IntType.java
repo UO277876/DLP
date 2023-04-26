@@ -39,7 +39,7 @@ public class IntType extends AbstractType{
 
     @Override
     public Type canBeCastTo(Type t, ASTNode node){
-        if(t instanceof IntType) {
+        if(t instanceof CharType || t instanceof DoubleType) {
             return t;
         }
 

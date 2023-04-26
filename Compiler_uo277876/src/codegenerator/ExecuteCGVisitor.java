@@ -125,4 +125,44 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
         return null;
     }
 
+    /**
+     execute[[While: statement1 -> expression statement2*]]() =
+        int condition = cg.getLabels();
+        int end = cg.getLabels();
+        <label> condition <:>
+        value[[expression]]()
+        <jz label> end
+        for(Statement st : statement2*){
+            execute[[statement]]()
+        }
+        <jmp label> condition
+        <label> end <:>
+     */
+    public Void visit(While w, Void params) {
+
+        return null;
+    }
+
+    /**
+     execute[[Conditional: statement1 -> expression statement2* statement3*]]() =
+         int else = cg.getLabels();
+         int end = cg.getLabels();
+         <label> condition <:>
+         value[[expression]]()
+         <jz label> else
+         for(Statement st : statement2*){
+            execute[[statement]]()
+         }
+         <jmp label> end
+         <label> else <:>
+         for(Statement st : statement3*){
+            execute[[statement]]()
+         }
+         <label> end <:>
+     */
+    public Void visit(Conditional c, Void params) {
+
+        return null;
+    }
+
 }

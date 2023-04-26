@@ -28,7 +28,7 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     @Override
     public Void visit(Cast c, Type params) {
         super.visit(c,params);
-        c.setType(c.getType().canBeCastTo(c.getExpression().getType(),c));
+        c.setType(c.getExpression().getType().canBeCastTo(c.getTypeCast(),c));
         c.setLValue(false);
         return null;
     }
@@ -142,9 +142,13 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
             e.accept(this, param);
             if(e.getLValue()){
                 e.setType(e.getType().mustBePromoteTo(e.getType(),in));
-            } else{
-                new ErrorType("The input isn´t a lvalue", in.getLine(), in.getColumn());
             }
+
+//            if(e.getLValue()){
+//                e.setType(e.getType().mustBePromoteTo(e.getType(),p));
+//            } else{
+//                new ErrorType("The print isn´t a lvalue", p.getLine(), p.getColumn());
+//            }
         }
 
         return null;
@@ -156,9 +160,13 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
             e.accept(this, param);
             if(e.getLValue()){
                 e.setType(e.getType().mustBePromoteTo(e.getType(),p));
-            } else{
-                new ErrorType("The print isn´t a lvalue", p.getLine(), p.getColumn());
             }
+
+//            if(e.getLValue()){
+//                e.setType(e.getType().mustBePromoteTo(e.getType(),p));
+//            } else{
+//                new ErrorType("The print isn´t a lvalue", p.getLine(), p.getColumn());
+//            }
         }
 
         return null;

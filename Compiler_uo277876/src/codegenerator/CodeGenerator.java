@@ -128,6 +128,11 @@ public class CodeGenerator {
         out.flush();
     }
 
+    public void addi() {
+        out.println("\taddi");
+        out.flush();
+    }
+
     public void sub(Type t) {
         out.println("\tsub" + t.suffix());
         out.flush();
@@ -135,6 +140,11 @@ public class CodeGenerator {
 
     public void mul(Type t) {
         out.println("\tmul" + t.suffix());
+        out.flush();
+    }
+
+    public void muli() {
+        out.println("\tmuli");
         out.flush();
     }
 
