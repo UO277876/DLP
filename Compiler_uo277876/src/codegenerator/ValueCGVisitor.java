@@ -77,7 +77,7 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     public Void visit(Cast c, Void params) {
         // El convertidor de cast se hace en el codeGenerator
         c.getExpression().accept(this.av, params);
-
+        cg.cast(c);
         return null;
     }
 

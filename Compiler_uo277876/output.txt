@@ -1,6 +1,6 @@
-	' * c ast.types.CharType@5f150435 (offset 0)
-	' * i ast.types.IntType@50cbc42f (offset 1)
-	' * r ast.types.DoubleType@75412c2f (offset 3)
+	' * c ast.types.CharType@2ac1fdc4 (offset 0)
+	' * i ast.types.IntType@1c53fd30 (offset 1)
+	' * r ast.types.DoubleType@50cbc42f (offset 3)
 
 ' Invocation main function
 call main

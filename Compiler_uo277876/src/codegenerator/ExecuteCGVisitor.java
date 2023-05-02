@@ -3,6 +3,7 @@ package codegenerator;
 import ast.Definition;
 import ast.Expression;
 import ast.Program;
+import ast.Statement;
 import ast.definitions.*;
 import ast.statements.*;
 
@@ -139,6 +140,15 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<Void,Void> {
         <label> end <:>
      */
     public Void visit(While w, Void params) {
+        int condition = cg.getLabels();
+        int end = cg.getLabels();
+
+        w.getCondition().accept(vv,params);
+
+        for(Statement st : w.getStatements()){
+            st.accept(this,params);
+        }
+
 
         return null;
     }

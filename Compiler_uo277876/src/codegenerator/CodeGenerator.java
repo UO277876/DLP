@@ -1,6 +1,9 @@
 package codegenerator;
 
 import ast.Type;
+import ast.expressions.Cast;
+import ast.types.CharType;
+import ast.types.IntType;
 
 import java.io.PrintWriter;
 
@@ -25,6 +28,8 @@ public class CodeGenerator {
         out.println("\t' * " + comment);
     }
 
+    public int getLabels(){ return labels; }
+
     // --------------- INSTRUCTIONS ---------------
     // --------------- MAIN INVOCATION y HALT ---------------
     public void mainCall() {
@@ -40,7 +45,6 @@ public class CodeGenerator {
     }
 
     // --------------- PUSH ---------------
-
     /**
      * Introduce un carácter (1 byte) en la pila
      */
@@ -226,23 +230,36 @@ public class CodeGenerator {
     }
 
     // --------------- CONVERSIONS ---------------
-    public void b2i() {
-        out.println("\tb2i");
+    public void cast(Cast cast) {
+        if(cast.getType() instanceof IntType){
+            if(cast.getTypeCast() instanceof CharType){
+                out.println("\ti2b");
+            } else {
+                out.println("\ti2f");
+            }
+        } else if(cast.getType() instanceof CharType) {
+            if(cast.getTypeCast() instanceof IntType){
+                out.println("\tb2i");
+            } else {
+                out.println("\tb2f");
+            }
+        } else {
+            if(cast.getTypeCast() instanceof IntType){
+                out.println("\tf2i");
+            } else {
+                out.println("\tf2b");
+            }
+        }
         out.flush();
     }
 
-    public void i2f() {
-        out.println("\ti2f");
-        out.flush();
-    }
-
-    public void f2i() {
-        out.println("\tf2i");
-        out.flush();
-    }
-
-    public void i2b() {
-        out.println("\ti2b");
+    // --------------- SALTOS ---------------
+    /**
+     * Extrae un valor de la pila (1, 2 o 4 bytes)
+     * y lo muestra en la consola
+     */
+    public void out(Type t) {
+        out.println("\tout" + t.suffix());
         out.flush();
     }
 }
