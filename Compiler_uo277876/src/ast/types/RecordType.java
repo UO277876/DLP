@@ -51,6 +51,11 @@ public class RecordType extends AbstractType {
     }
 
     @Override
+    public String toString(){
+        return "RecordType";
+    }
+
+    @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);
     }

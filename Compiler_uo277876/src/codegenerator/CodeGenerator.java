@@ -22,18 +22,32 @@ public class CodeGenerator {
     }
 
     /**
-     * Para los comentarios
+     * Para los comentarios generales (usan *)
      */
     public void comment(String comment) {
         out.println("\t' * " + comment);
     }
 
+    /**
+     * Para los comentarios especificos (usan ')
+     */
+    public void comment_specific(String comment) {
+        out.println("\n'" + comment);
+    }
+
     public int getLabels(){ return labels; }
 
     // --------------- INSTRUCTIONS ---------------
+    /**
+     * Para las labels
+     */
+    public void label(String id) {
+        out.println(" "+ id + ":");
+        out.flush();
+    }
+
     // --------------- MAIN INVOCATION y HALT ---------------
     public void mainCall() {
-        out.println("\n' Invocation main function");
         out.println("call main");
         out.flush();
     }
@@ -255,11 +269,41 @@ public class CodeGenerator {
 
     // --------------- SALTOS ---------------
     /**
-     * Extrae un valor de la pila (1, 2 o 4 bytes)
-     * y lo muestra en la consola
+     * Saltos condicionales desapilan un entero de la pila (2 bytes) y saltan a
+     * <id> si el valor entero es distinto de cero (jnz)
      */
-    public void out(Type t) {
-        out.println("\tout" + t.suffix());
+    public void jmp(String id) {
+        out.println("\tjmp\t" + id);
+        out.flush();
+    }
+
+    /**
+     * Saltos condicionales desapilan un entero de la pila (2 bytes) y saltan a
+     * <id> si el valor entero es cero
+     */
+    public void jz(String id) {
+        out.println("\tjz\t" + id);
+        out.flush();
+    }
+
+    /**
+     * Saltos incondicionales a la etiqueta <id>
+     */
+    public void jnz(String id) {
+        out.println("\tjnz\t" + id);
+        out.flush();
+    }
+
+    // --------------- FUNCIONES (RET) ---------------
+
+    /**
+     * Instrucción retun de las funciones, formada por tres partes:
+     * bytes, Bytes a devolver (2)
+     * varLocal, Bytes de todas las variables locales (5)
+     * args, Bytes de todos los argumentos (5)
+     */
+    public void ret(int bytes, int varLocal, int args) {
+        out.println("\tret\t" + bytes + ", " + varLocal + ", " + args);
         out.flush();
     }
 }

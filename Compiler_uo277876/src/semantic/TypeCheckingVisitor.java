@@ -140,9 +140,7 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     public Void visit(Input in, Type param) {
         for (Expression e : in.getExpressions()) {
             e.accept(this, param);
-            if(e.getLValue()){
-                e.setType(e.getType().mustBePromoteTo(e.getType(),in));
-            }
+            e.setType(e.getType().mustBePromoteTo(e.getType(),in));
 
 //            if(e.getLValue()){
 //                e.setType(e.getType().mustBePromoteTo(e.getType(),p));
@@ -158,9 +156,7 @@ public class TypeCheckingVisitor extends AbstractVisitor<Type,Void> {
     public Void visit(Print p, Type param) {
         for (Expression e : p.getExpressions()) {
             e.accept(this, param);
-            if(e.getLValue()){
-                e.setType(e.getType().mustBePromoteTo(e.getType(),p));
-            }
+            e.setType(e.getType().mustBePromoteTo(e.getType(),p));
 
 //            if(e.getLValue()){
 //                e.setType(e.getType().mustBePromoteTo(e.getType(),p));

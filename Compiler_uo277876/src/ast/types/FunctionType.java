@@ -28,6 +28,11 @@ public class FunctionType extends AbstractType {
     }
 
     @Override
+    public String toString(){
+        return "FunctionType";
+    }
+
+    @Override
     public Type parenthesis(List<Expression> params, ASTNode a){
         // Para comprobar que hay el número de parámetros que necesita la función
         if (params.size() != parameters.size()) {

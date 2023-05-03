@@ -141,7 +141,10 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     /**
      value[[FunctionInvocation: expression1 -> expression2 expression3*]]()=
-
+            for(Expression arg : expression3){
+                value[[arg]]()
+            }
+            <call> expression2.name
      **/
     @Override
     public Void visit(FunctionInvocation fi, Void params) {

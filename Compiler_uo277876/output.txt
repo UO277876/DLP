@@ -1,8 +1,8 @@
-	' * c ast.types.CharType@2ac1fdc4 (offset 0)
-	' * i ast.types.IntType@1c53fd30 (offset 1)
-	' * r ast.types.DoubleType@50cbc42f (offset 3)
+	' * c CharType (offset 0)
+	' * i IntType (offset 1)
+	' * r DoubleType (offset 3)
 
-' Invocation main function
+'Invocation main function
 call main
 halt
 

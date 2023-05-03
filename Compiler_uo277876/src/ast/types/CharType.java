@@ -67,6 +67,11 @@ public class CharType extends AbstractType {
     }
 
     @Override
+    public String toString(){
+        return "CharType";
+    }
+
+    @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);
     }

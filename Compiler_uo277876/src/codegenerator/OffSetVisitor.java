@@ -64,11 +64,14 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
     public Integer visit(FunctionType ft, Integer params) {
         // BP + Sumatorio de los parámetros posteriores declarados (parámetros a su derecha)
         // El primer parámetro declarado despues de la suma de 4 es el ÚLTIMO parámetro declarado
+        int paramsOffset = 4;
+
         ft.getReturnType().accept(this, params);
         int paramsBytesSum = 0;
+
         for (int i = ft.getParameters().size() - 1; i >= 0; i--) {
             VarDefinition vardef = ft.getParameters().get(i);
-            vardef.setOffset(4+paramsBytesSum);
+            vardef.setOffset(paramsOffset + paramsBytesSum);
             paramsBytesSum += vardef.getType().numberOfBytes();
         }
 
@@ -80,15 +83,13 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
         fd.getType().accept(this, 4); // Hay que cambiar el ámbito
 
         int sumBytesScope = 0;
-        Integer localVarBytes = null;
+        fd.setLocalVariablesBytes(0);
 
         for (VarDefinition vf :fd.getVarDefinitions()) { // VARIABLES LOCALES: BP - sumatorio variables anteriores (y ella misma)
-            localVarBytes = vf.accept(this, sumBytesScope);
-            if (localVarBytes != null) // En caso de que sean sentencias
-                sumBytesScope = localVarBytes;
+            fd.setLocalVariablesBytes( fd.getLocalVariablesBytes() + vf.accept(this, sumBytesScope));
+            vf.setOffset(fd.getLocalVariablesBytes() * -1);
         }
 
-        //fd.setBytesParams(sumBytesScope);
         return null;
     }
 
