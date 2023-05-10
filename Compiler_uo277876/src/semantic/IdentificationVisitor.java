@@ -36,6 +36,7 @@ public class IdentificationVisitor extends AbstractVisitor<Void, Void>{
                     vd.getLine(), vd.getColumn());
         }
 
+        super.visit(vd, params);
         return null;
     }
 

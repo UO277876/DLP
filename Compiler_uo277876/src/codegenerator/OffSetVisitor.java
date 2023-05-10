@@ -10,25 +10,17 @@ import semantic.AbstractVisitor;
 
 public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
 
-    private int bytesGlobalSum=0; // Para las variables globales, se usa un parámetro global en el Visitor
+    private int bytesGlobalSum = 0; // Para las variables globales se usa un parámetro global en el Visitor
 
     @Override
     public Integer visit(RecordType rt, Integer params) {
-        // Para el sumatorio de todos los campos que lo componen
-        int bytesFieldsSum = 0;
-
-        for (RecordField rf : rt.getFields()) {
-            bytesFieldsSum = params + rf.accept(this, bytesFieldsSum);
-        }
+        super.visit(rt, params);
+        // Opción 1 (implementada): Iterar desde el nodo principal cambiando el offset de los RecordField
+        // Opción 2: En los nodos secundarios de RecordField modificar una variable
+        // pasada como parametro en el Visitor
+        rt.actualizeOffset();
 
         return null;
-    }
-
-    @Override
-    public Integer visit(RecordField rf, Integer params) {
-        rf.getType().accept(this, params);
-        rf.setOffset(params); // El offset de los recordFields anteriores
-        return rf.getType().numberOfBytes(); // Se devuelve el actual
     }
 
 

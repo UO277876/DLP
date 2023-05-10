@@ -50,6 +50,15 @@ public class RecordType extends AbstractType {
         return -1;
     }
 
+    public void actualizeOffset(){
+        int bytesFields = 0;
+
+        for(RecordField field : fields){
+            field.setOffset(bytesFields);
+            bytesFields += field.getType().numberOfBytes();
+        }
+    }
+
     @Override
     public String toString(){
         return "RecordType";

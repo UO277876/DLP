@@ -1,5 +1,3 @@
-import codegenerator.CodeGenerator;
-import codegenerator.ExecuteCGVisitor;
 import codegenerator.OffSetVisitor;
 import org.antlr.v4.runtime.*;
 import introspector.model.IntrospectorModel;
@@ -14,8 +12,8 @@ import semantic.TypeCheckingVisitor;
 public class Main {
 
 	public static void main(String... args) throws Exception {
-		if (args.length<2) {
-			System.err.println("Please, pass me the input and output files.");
+		if (args.length<1) {
+			System.err.println("Please, pass me the input file.");
 			return;
 		}
 
@@ -39,10 +37,8 @@ public class Main {
 		else{
 			// * The AST is shown
 			ast.accept(new OffSetVisitor(),null);
-			ast.accept(new ExecuteCGVisitor(new CodeGenerator(args[1], args[0])), null);
-			//IntrospectorModel model=new IntrospectorModel("Program", ast);
-			//new IntrospectorView("Introspector", model);
+			IntrospectorModel model=new IntrospectorModel("Program", ast);
+			new IntrospectorView("Introspector", model);
 		}
 	}
 }
-
