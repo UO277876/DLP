@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/OffSetVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/OffSetVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="wrong.input.6.txt output.txt" />
+      <option name="PROGRAM_PARAMETERS" value="input.txt output.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,16 +134,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/symboltable/SymbolTable.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

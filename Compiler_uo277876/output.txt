@@ -1,6 +1,6 @@
-	' * i IntType (offset 0)
-	' * r DoubleType (offset 2)
-	' * c CharType (offset 6)
+	' * c CharType (offset 0)
+	' * i IntType (offset 1)
+	' * r DoubleType (offset 3)
 
 'Invocation main function
 call main
