@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objetive.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objetivo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/objetivos.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/ExecuteCGVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/ExecuteCGVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/IdentificationVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/semantic/IdentificationVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/definitions/FuncDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/semantic/IdentificationVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/semantic/IdentificationVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrong.input.6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wrong.input.6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

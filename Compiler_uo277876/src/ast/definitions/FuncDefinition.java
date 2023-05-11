@@ -11,8 +11,6 @@ public class FuncDefinition extends AbstractDefinition {
     private List<Statement> statements;
     private List<VarDefinition> varDefinitions;
 
-    private int localVariablesBytes;
-
     public FuncDefinition(Type type, String name, List<VarDefinition> varDefinitions,
                           List<Statement> statements, int line, int column) {
         super(type, name, line, column);
@@ -25,13 +23,6 @@ public class FuncDefinition extends AbstractDefinition {
     }
     public List<VarDefinition> getVarDefinitions(){
         return varDefinitions;
-    }
-
-    public void setLocalVariablesBytes(int localVariablesBytes){
-        this.localVariablesBytes = localVariablesBytes;
-    }
-    public int getLocalVariablesBytes(){
-        return localVariablesBytes;
     }
 
     @Override
