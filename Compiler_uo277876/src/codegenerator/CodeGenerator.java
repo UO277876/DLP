@@ -22,7 +22,7 @@ public class CodeGenerator {
     }
 
     /**
-     * Para los comentarios generales (usan *)
+     * Para los comentarios generales (usan ' *)
      */
     public void comment(String comment) {
         out.println("\t' * " + comment);
@@ -42,7 +42,7 @@ public class CodeGenerator {
      * Para las labels
      */
     public void label(String id) {
-        out.println(" "+ id + ":");
+        out.println(" " + id + ":");
         out.flush();
     }
 
@@ -62,7 +62,7 @@ public class CodeGenerator {
     /**
      * Introduce un carácter (1 byte) en la pila
      */
-    public void pushc(char b) {
+    public void pushb(char b) {
         out.println("\tpushb\t" + b);
         out.flush();
     }
@@ -244,21 +244,21 @@ public class CodeGenerator {
     }
 
     // --------------- CONVERSIONS ---------------
-    public void cast(Cast cast) {
-        if(cast.getType() instanceof IntType){
-            if(cast.getTypeCast() instanceof CharType){
+    public void cast(Type from, Type to) {
+        if(from instanceof IntType){
+            if(to instanceof CharType){
                 out.println("\ti2b");
             } else {
                 out.println("\ti2f");
             }
-        } else if(cast.getType() instanceof CharType) {
-            if(cast.getTypeCast() instanceof IntType){
+        } else if(from instanceof CharType) {
+            if(to instanceof IntType){
                 out.println("\tb2i");
             } else {
                 out.println("\tb2f");
             }
         } else {
-            if(cast.getTypeCast() instanceof IntType){
+            if(to instanceof IntType){
                 out.println("\tf2i");
             } else {
                 out.println("\tf2b");
@@ -294,7 +294,7 @@ public class CodeGenerator {
         out.flush();
     }
 
-    // --------------- FUNCIONES (RET) ---------------
+    // --------------- FUNCIONES (RET) (CALL) ---------------
 
     /**
      * Instrucción retun de las funciones, formada por tres partes:
@@ -302,8 +302,18 @@ public class CodeGenerator {
      * varLocal, Bytes de todas las variables locales (5)
      * args, Bytes de todos los argumentos (5)
      */
-    public void ret(int bytes, int varLocal, int args) {
-        out.println("\tret\t" + bytes + ", " + varLocal + ", " + args);
+    public void ret(int bytes, int varLocal, int params) {
+        out.println("\tret\t" + bytes + ", " + varLocal + ", " + params);
+        out.flush();
+    }
+
+    public void call(String name) {
+        out.println("\tcall\t" + name);
+        out.flush();
+    }
+
+    public void enter(int varLocals) {
+        out.println("\tenter\t" + varLocals);
         out.flush();
     }
 }

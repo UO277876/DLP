@@ -10,8 +10,11 @@ public class AddressCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     private ValueCGVisitor vv;
 
-    public AddressCGVisitor(CodeGenerator cg, ValueCGVisitor vv) {
+    public AddressCGVisitor(CodeGenerator cg) {
         super(cg);
+    }
+
+    public void setAddressCGVisitor(ValueCGVisitor vv){
         this.vv = vv;
     }
 
@@ -27,13 +30,19 @@ public class AddressCGVisitor extends AbstractCGVisitor<Void,Void> {
      **/
     @Override
     public Void visit(Variable v, Void params) {
-        if(v.getDefinition().getScope() == 0){ // SI ES UNA VARIABLE GLOBAL
-            cg.pusha(((VarDefinition) v.getDefinition()).getOffset());
-        } else {
-            cg.pushBP();
-            cg.pushi(((VarDefinition) v.getDefinition()).getOffset());
-            cg.add(v.getType());
+        if (v.getDefinition() instanceof VarDefinition)
+        {
+            if(v.getDefinition().getScope() == 0){
+                // SI ES UNA VARIABLE GLOBAL
+                cg.pusha(((VarDefinition) v.getDefinition()).getOffset());
+            } else {
+                // SI ES UNA VARIABLE LOCAL: BP - VAR ANTERIORES
+                cg.pushBP();
+                cg.pushi(((VarDefinition) v.getDefinition()).getOffset());
+                cg.add(v.getType());
+            }
         }
+
         return null;
     }
 
@@ -48,8 +57,7 @@ public class AddressCGVisitor extends AbstractCGVisitor<Void,Void> {
     @Override
     public Void visit(ArrayAccess ac, Void params) {
         ac.getExpression1().accept(this,params); // Primero se necesita la dirección base del array
-        // Se obtiene el valor en v[i] de i para saber cuanto tiene que
-        // saltar
+        // Se obtiene el valor en v[i] de i para saber cuanto tiene que saltar
         ac.getExpression2().accept(vv,params);
         cg.pushi(ac.getType().numberOfBytes());
         cg.muli();

@@ -11,6 +11,9 @@ public class FuncDefinition extends AbstractDefinition {
     private List<Statement> statements;
     private List<VarDefinition> varDefinitions;
 
+    // Para la generacion de codigo
+    private int bytesLocalsSum;
+
     public FuncDefinition(Type type, String name, List<VarDefinition> varDefinitions,
                           List<Statement> statements, int line, int column) {
         super(type, name, line, column);
@@ -23,6 +26,14 @@ public class FuncDefinition extends AbstractDefinition {
     }
     public List<VarDefinition> getVarDefinitions(){
         return varDefinitions;
+    }
+
+    public int getBytesLocalsSum() {
+        return bytesLocalsSum;
+    }
+
+    public void setBytesLocalsSum(int bytesLocalsSum) {
+        this.bytesLocalsSum = bytesLocalsSum;
     }
 
     @Override

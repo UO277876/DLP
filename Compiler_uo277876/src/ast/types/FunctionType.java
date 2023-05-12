@@ -12,6 +12,7 @@ public class FunctionType extends AbstractType {
 
     private Type returnType;
     private List<VarDefinition> parameters;
+    private int bytesParamsSum;
 
     public FunctionType(Type returnType, List<VarDefinition> parameters) {
         super(0, 0);
@@ -29,7 +30,7 @@ public class FunctionType extends AbstractType {
 
     @Override
     public String toString(){
-        return "FunctionType";
+        return "function";
     }
 
     @Override
@@ -50,6 +51,14 @@ public class FunctionType extends AbstractType {
         }
 
         return returnType;
+    }
+
+    public int getBytesParamsSum() {
+        return bytesParamsSum;
+    }
+
+    public void setBytesParamsSum(int bytesParamsSum) {
+        this.bytesParamsSum = bytesParamsSum;
     }
 
     @Override

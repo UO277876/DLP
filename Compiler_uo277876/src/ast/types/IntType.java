@@ -81,7 +81,7 @@ public class IntType extends AbstractType{
 
     @Override
     public String toString(){
-        return "IntType";
+        return "int";
     }
 
     @Override

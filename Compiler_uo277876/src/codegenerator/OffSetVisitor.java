@@ -6,13 +6,13 @@ import ast.types.FunctionType;
 import ast.types.RecordType;
 import semantic.AbstractVisitor;
 
-public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
+public class OffSetVisitor extends AbstractVisitor<Void, Void> {
 
     // Para las variables globales se usa un parámetro global en el Visitor
     private int sumBytesGlVar = 0;
 
     @Override
-    public Integer visit(RecordType rt, Integer params) {
+    public Void visit(RecordType rt, Void params) {
         super.visit(rt, params);
         // Opción 1 (implementada): Iterar desde el nodo principal cambiando el offset de los RecordField
         // Opción 2: En los nodos secundarios de RecordField modificar una variable
@@ -24,7 +24,7 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
 
 
     @Override
-    public Integer visit(VarDefinition vd, Integer params) {
+    public Void visit(VarDefinition vd, Void params) {
         super.visit(vd, params);
 
         if (vd.getScope() == 0) {
@@ -38,7 +38,7 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
     }
 
     @Override
-    public Integer visit(FunctionType ft, Integer params) {
+    public Void visit(FunctionType ft, Void params) {
         // PARAMETROS: BP + Sumatorio de los parámetros posteriores declarados (parámetros a su derecha)
         // El primer parámetro declarado despues de la suma de 4 es el ÚLTIMO parámetro declarado
         int sumBytesParams = 0;
@@ -49,11 +49,12 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
             sumBytesParams += vd.getType().numberOfBytes();
         }
 
-        return sumBytesParams;
+        ft.setBytesParamsSum(sumBytesParams);
+        return null;
     }
 
     @Override
-    public Integer visit(FuncDefinition fd, Integer params) {
+    public Void visit(FuncDefinition fd, Void params) {
         fd.getType().accept(this, params); // Para los parametros
 
         int sumBytesLocalVar = 0;
@@ -64,6 +65,7 @@ public class OffSetVisitor extends AbstractVisitor<Integer, Integer> {
             vf.setOffset(-sumBytesLocalVar);
         }
 
+        fd.setBytesLocalsSum(sumBytesLocalVar);
         return null;
     }
 

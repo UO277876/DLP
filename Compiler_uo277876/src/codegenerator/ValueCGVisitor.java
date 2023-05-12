@@ -1,5 +1,6 @@
 package codegenerator;
 
+import ast.Expression;
 import ast.Type;
 import ast.expressions.*;
 
@@ -9,14 +10,20 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     public ValueCGVisitor(CodeGenerator cg) {
         super(cg);
-        this.av = new AddressCGVisitor(cg, this);
+    }
+
+    public void setValueCGVisitor(AddressCGVisitor av){
+        this.av = av;
     }
 
     // ------------------ EXPRESSIONS -------------------
     /**
      value[[Arithmetic: expression1 -> expression2 operator=(+|-|*|/|%) expression3]]()=
         value[[expression2]]
+        expression2.type.converTo(expression1.type)
         value[expression3]]
+        expression3.type.converTo(expression1.type)
+
         switch(operator):
             case '+':
                 <add> expression1.type.suffix
@@ -32,7 +39,10 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     @Override
     public Void visit(Arithmetic a, Void params) {
         a.getLeft().accept(this, params);
+        cg.cast(a.getLeft().getType(), a.getType());
         a.getRight().accept(this,params);
+        cg.cast(a.getRight().getType(), a.getType());
+
         Type type =  a.getLeft().getType();
 
         switch (a.getOperator()){
@@ -71,13 +81,13 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     /**
      value[[Cast: expression1 -> type expression2]]()=
         value[[expression2]]()
-
+        expression2.type.converTo(type)
      **/
     @Override
     public Void visit(Cast c, Void params) {
         // El convertidor de cast se hace en el codeGenerator
-        c.getExpression().accept(this.av, params);
-        cg.cast(c);
+        c.getExpression().accept(this, params);
+        cg.cast(c.getType(),c.getTypeCast());
         return null;
     }
 
@@ -87,7 +97,7 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
      **/
     @Override
     public Void visit(CharLiteral cl, Void params) {
-        cg.pushc(cl.getValue()); // El suffix esta en el método push
+        cg.pushb(cl.getValue()); // El suffix esta en el método push
         return null;
     }
 
@@ -141,13 +151,18 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
 
     /**
      value[[FunctionInvocation: expression1 -> expression2 expression3*]]()=
-            for(Expression arg : expression3){
-                value[[arg]]()
+            for(Expression param : expression3){
+                value[[param]]()
             }
             <call> expression2.name
      **/
     @Override
     public Void visit(FunctionInvocation fi, Void params) {
+        for(Expression param: fi.getParameters()){
+            param.accept(this,params);
+        }
+
+        cg.call(fi.getFunction().getName());
         return null;
     }
 
@@ -167,19 +182,18 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
          value[expression3]]
          switch(operator):
             case '&&':
-                <and> expression1.type.suffix
+                <and>
             case '||':
-                <or> expression1.type.suffix
+                <or>
      **/
     @Override
     public Void visit(Logical l, Void params) {
         l.getLeft().accept(this, params);
         l.getRight().accept(this,params);
-        Type type =  l.getLeft().getType();
 
         switch (l.getOperator()){
             case "&&":
-                cg.and(); // No le hace falta suffix
+                cg.and();
                 break;
             case "||":
                 cg.or();
@@ -230,7 +244,7 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     /**
      value[[UnaryNot: expression1 -> expression2]]()=
          value[[expression2]]
-         <not> expression1.type.suffix
+         <not>
      **/
     @Override
     public Void visit(UnaryNot un, Void params) {
