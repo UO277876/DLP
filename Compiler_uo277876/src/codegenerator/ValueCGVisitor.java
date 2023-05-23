@@ -39,9 +39,9 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     @Override
     public Void visit(Arithmetic a, Void params) {
         a.getLeft().accept(this, params);
-        cg.cast(a.getLeft().getType(), a.getType());
+        cg.cast(a.getLeft().getType(),a.getType());
         a.getRight().accept(this,params);
-        cg.cast(a.getRight().getType(), a.getType());
+        cg.cast(a.getRight().getType(),a.getType());
 
         Type type =  a.getLeft().getType();
 
@@ -87,7 +87,7 @@ public class ValueCGVisitor extends AbstractCGVisitor<Void,Void> {
     public Void visit(Cast c, Void params) {
         // El convertidor de cast se hace en el codeGenerator
         c.getExpression().accept(this, params);
-        cg.cast(c.getType(),c.getTypeCast());
+        cg.cast(c.getExpression().getType(),c.getTypeCast());
         return null;
     }
 

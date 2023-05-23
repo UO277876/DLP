@@ -39,7 +39,7 @@ public class AddressCGVisitor extends AbstractCGVisitor<Void,Void> {
                 // SI ES UNA VARIABLE LOCAL: BP - VAR ANTERIORES
                 cg.pushBP();
                 cg.pushi(((VarDefinition) v.getDefinition()).getOffset());
-                cg.add(v.getType());
+                cg.addi();
             }
         }
 

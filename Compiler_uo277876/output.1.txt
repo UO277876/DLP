@@ -1,63 +1,46 @@
-
-#source	"input.1.txt"
-
-	' * ArrayType[of:RealType,size:10] v (offset 0)
-
-' Invocation to the main function
+	' * Global variables:
+	' * array v (offset 0)
+	' Invocation main function
 call main
 halt
 
-
-#line	4
-
- main:
-	' * Parameters
-	' * Local variables
-	' * RealType value (offset -4)
-	' * IntType i (offset -6)
-	' * IntType j (offset -8)
-	' * ArrayType[of:ArrayType[of:IntType,size:5],size:4] w (offset -48)
-	' * RecordType[fields:[Field[name:day,type:IntType offset:0], Field[name:month,type:IntType offset:2], Field[name:year,type:IntType offset:4]]] date (offset -54)
+	' * main:
+	' * Parameters:
+	' * Local variables:
 	enter	54
-
-#line	12
 	' * Read
-	push	bp
+	pusha	
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	ini
 	storei
-
-#line	13
-	' * Assignment
-	push	bp
+	' * Assignment:
+	pusha	
 	pushi	-54
 	addi
-	pushi	4
+	pushi	0
 	addi
-	pushb	97
+	pushb	0
 	b2i
 	storei
-
-#line	14
-	' * Assignment
-	push	bp
+	' * Assignment:
+	pusha	
 	pushi	-54
 	addi
-	pushi	2
+	pushi	0
 	addi
-	push	bp
+	pusha	
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	loadi
-	push	bp
+	pusha	
 	pushi	-54
 	addi
-	pushi	4
+	pushi	0
 	addi
 	loadi
 	muli
@@ -66,116 +49,81 @@ halt
 	pushi	1
 	addi
 	storei
-
-#line	15
 	' * Write
-	push	bp
+	pusha	
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	loadi
 	outi
-
-#line	15
-	' * Write
 	pushb	10
 	outb
-
-#line	15
-	' * Write
-	push	bp
+	pusha	
 	pushi	-54
 	addi
-	pushi	2
+	pushi	0
 	addi
 	loadi
 	outi
-
-#line	15
-	' * Write
 	pushb	10
 	outb
-
-#line	15
-	' * Write
-	push	bp
+	pusha	
 	pushi	-54
 	addi
-	pushi	4
+	pushi	0
 	addi
 	loadi
 	i2f
 	outf
-
-#line	15
-	' * Write
 	pushb	10
 	outb
-
-#line	17
 	' * Read
-	push	bp
+	pusha	
 	pushi	-4
 	addi
 	inf
 	storef
-
-#line	19
-	' * Assignment
-	push	bp
+	' * Assignment:
+	pusha	
 	pushi	-6
 	addi
 	pushi	0
 	storei
-
-#line	20
-	' * While
-
-#line	20
- label0:
-	push	bp
+0:
+	' condition
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	10
 	lti
-	jz	label1
-	' * While body
-
-#line	21
-	' * Assignment
+	jz	1
+	' while body
+	' * Assignment:
 	pusha	0
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	4
 	muli
 	addi
-	push	bp
+	pusha	
 	pushi	-4
 	addi
 	loadf
 	storef
-
-#line	22
 	' * Write
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	outi
-
-#line	22
-	' * Write
-	pushb	58
+	pushb	0
 	outb
-
-#line	22
-	' * Write
 	pusha	0
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
@@ -184,181 +132,129 @@ halt
 	addi
 	loadf
 	outf
-
-#line	22
-	' * Write
-	pushb	32
+	pushb	0
 	outb
-
-#line	23
-	' * If
-
-#line	23
-	push	bp
+	' condition
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	2
 	modi
-	jz	label2
-	' * if body
-
-#line	24
+	jz	2
+	' if body
 	' * Write
-	pushb	111
+	pushb	0
 	outb
-
-#line	24
-	' * Write
-	pushb	100
+	pushb	0
 	outb
-
-#line	24
-	' * Write
-	pushb	100
+	pushb	0
 	outb
-
-#line	24
-	' * Write
 	pushb	10
 	outb
-	jmp	label3
- label2:
-	' * else body
-
-#line	26
+	jmp	3
+2:
+	' else body
 	' * Write
-	pushb	101
+	pushb	0
 	outb
-
-#line	26
-	' * Write
-	pushb	118
+	pushb	0
 	outb
-
-#line	26
-	' * Write
-	pushb	101
+	pushb	0
 	outb
-
-#line	26
-	' * Write
-	pushb	110
+	pushb	0
 	outb
-
-#line	26
-	' * Write
 	pushb	10
 	outb
- label3:
-
-#line	27
-	' * Assignment
-	push	bp
+3:
+	' * Assignment:
+	pusha	
 	pushi	-6
 	addi
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	1
 	addi
 	storei
-	jmp	label0
- label1:
-
-#line	29
+	jmp	0
+1:
 	' * Write
 	pushb	10
 	outb
-
-#line	31
-	' * Assignment
-	push	bp
+	' * Assignment:
+	pusha	
 	pushi	-6
 	addi
 	pushi	0
 	storei
-
-#line	32
-	' * While
-
-#line	32
- label4:
-	push	bp
+4:
+	' condition
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	4
 	lti
-	jz	label5
-	' * While body
-
-#line	33
-	' * Assignment
-	push	bp
+	jz	5
+	' while body
+	' * Assignment:
+	pusha	
 	pushi	-8
 	addi
 	pushi	0
 	storei
-
-#line	34
-	' * While
-
-#line	34
- label6:
-	push	bp
+6:
+	' condition
+	pusha	
 	pushi	-8
 	addi
 	loadi
 	pushi	5
 	lti
-	jz	label7
-	' * While body
-
-#line	35
-	' * Assignment
-	push	bp
+	jz	7
+	' while body
+	' * Assignment:
+	pusha	
 	pushi	-48
 	addi
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	10
 	muli
 	addi
-	push	bp
+	pusha	
 	pushi	-8
 	addi
 	loadi
 	pushi	2
 	muli
 	addi
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
-	push	bp
+	pusha	
 	pushi	-8
 	addi
 	loadi
 	addi
 	storei
-
-#line	36
 	' * Write
-	push	bp
+	pusha	
 	pushi	-48
 	addi
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	10
 	muli
 	addi
-	push	bp
+	pusha	
 	pushi	-8
 	addi
 	loadi
@@ -367,44 +263,34 @@ halt
 	addi
 	loadi
 	outi
-
-#line	36
-	' * Write
-	pushb	32
+	pushb	0
 	outb
-
-#line	37
-	' * Assignment
-	push	bp
+	' * Assignment:
+	pusha	
 	pushi	-8
 	addi
-	push	bp
+	pusha	
 	pushi	-8
 	addi
 	loadi
 	pushi	1
 	addi
 	storei
-	jmp	label6
- label7:
-
-#line	39
+	jmp	6
+7:
 	' * Write
 	pushb	10
 	outb
-
-#line	40
-	' * Assignment
-	push	bp
+	' * Assignment:
+	pusha	
 	pushi	-6
 	addi
-	push	bp
+	pusha	
 	pushi	-6
 	addi
 	loadi
 	pushi	1
 	addi
 	storei
-	jmp	label4
- label5:
-	ret	0, 54, 0
+	jmp	4
+5:

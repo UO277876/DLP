@@ -22,6 +22,7 @@ public class ErrorType extends AbstractType{
         return "Error: " + message + " in (" + getLine() + "," + getColumn() + ")";
     }
 
+
     @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);

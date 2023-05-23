@@ -5,6 +5,9 @@ import ast.Type;
 import semantic.Visitor;
 
 public class IntType extends AbstractType{
+
+    private static IntType instance;
+
     public IntType() {
         super(0, 0);
     }
@@ -82,6 +85,12 @@ public class IntType extends AbstractType{
     @Override
     public String toString(){
         return "int";
+    }
+
+    public static IntType getInstance() {
+        if (instance == null)
+            instance = new IntType();
+        return instance;
     }
 
     @Override

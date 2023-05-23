@@ -4,6 +4,8 @@ import semantic.Visitor;
 
 public class VoidType extends AbstractType {
 
+    private static VoidType instance;
+
     public VoidType() {
         super(0, 0);
     }
@@ -16,6 +18,12 @@ public class VoidType extends AbstractType {
     @Override
     public String toString(){
         return "void";
+    }
+
+    public static VoidType getInstance() {
+        if (instance == null)
+            instance = new VoidType();
+        return instance;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package codegenerator;
 
 import ast.Type;
-import ast.expressions.Cast;
 import ast.types.CharType;
+import ast.types.DoubleType;
 import ast.types.IntType;
 
 import java.io.PrintWriter;
@@ -15,6 +15,7 @@ public class CodeGenerator {
     public CodeGenerator(String outputFileName, String sourceFileName){
         try {
             out = new PrintWriter(outputFileName);
+            out.println("#source \"" + sourceFileName + "\"" + "\n");
         } catch (Exception e) {
             System.err.println("Error al abrir el fichero " + outputFileName);
             System.exit(-1);
@@ -32,17 +33,34 @@ public class CodeGenerator {
      * Para los comentarios especificos (usan ')
      */
     public void comment_specific(String comment) {
-        out.println("\n'" + comment);
+        out.println("\n' " + comment);
+        out.flush();
     }
 
-    public int getLabels(){ return labels; }
+    /**
+     * Para los comentarios especificos (usan ')
+     */
+    public void comment_functions(String comment) {
+        out.println(comment);
+        out.flush();
+    }
+
+    /**
+     * Para poner los números de línea
+     */
+    public void line(int line) {
+        out.println("\n#line " + "\t" + line);
+        out.flush();
+    }
+
+    public int getLabels(){ return labels++; }
 
     // --------------- INSTRUCTIONS ---------------
     /**
      * Para las labels
      */
-    public void label(String id) {
-        out.println(" " + id + ":");
+    public void label(int id) {
+        out.println(id + ":");
         out.flush();
     }
 
@@ -63,7 +81,7 @@ public class CodeGenerator {
      * Introduce un carácter (1 byte) en la pila
      */
     public void pushb(char b) {
-        out.println("\tpushb\t" + b);
+        out.println("\tpushb\t" + (int) b);
         out.flush();
     }
 
@@ -95,7 +113,7 @@ public class CodeGenerator {
      * Introduce el valor del registro bp (2 bytes)
      */
     public void pushBP() {
-        out.println("\tpusha\t");
+        out.println("\tpush\tbp");
         out.flush();
     }
 
@@ -245,23 +263,35 @@ public class CodeGenerator {
 
     // --------------- CONVERSIONS ---------------
     public void cast(Type from, Type to) {
-        if(from instanceof IntType){
-            if(to instanceof CharType){
+        if(from instanceof IntType) {
+            if (to instanceof CharType) {
                 out.println("\ti2b");
-            } else {
+            }
+
+            if (to instanceof DoubleType) {
                 out.println("\ti2f");
             }
-        } else if(from instanceof CharType) {
-            if(to instanceof IntType){
+        }
+
+        if(from instanceof CharType) {
+            if (to instanceof IntType) {
                 out.println("\tb2i");
-            } else {
-                out.println("\tb2f");
             }
-        } else {
+
+            if (to instanceof DoubleType) {
+                out.println("\tb2i");
+                out.println("\ti2f");
+            }
+        }
+
+        if(from instanceof DoubleType) {
             if(to instanceof IntType){
                 out.println("\tf2i");
-            } else {
-                out.println("\tf2b");
+            }
+
+            if(to instanceof CharType){
+                out.println("\tf2i");
+                out.println("\ti2b");
             }
         }
         out.flush();
@@ -272,7 +302,7 @@ public class CodeGenerator {
      * Saltos condicionales desapilan un entero de la pila (2 bytes) y saltan a
      * <id> si el valor entero es distinto de cero (jnz)
      */
-    public void jmp(String id) {
+    public void jmp(int id) {
         out.println("\tjmp\t" + id);
         out.flush();
     }
@@ -281,7 +311,7 @@ public class CodeGenerator {
      * Saltos condicionales desapilan un entero de la pila (2 bytes) y saltan a
      * <id> si el valor entero es cero
      */
-    public void jz(String id) {
+    public void jz(int id) {
         out.println("\tjz\t" + id);
         out.flush();
     }
@@ -289,7 +319,7 @@ public class CodeGenerator {
     /**
      * Saltos incondicionales a la etiqueta <id>
      */
-    public void jnz(String id) {
+    public void jnz(int id) {
         out.println("\tjnz\t" + id);
         out.flush();
     }

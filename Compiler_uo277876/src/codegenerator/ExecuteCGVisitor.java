@@ -66,25 +66,37 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
      **/
     @Override
     public Void visit(FuncDefinition fd, FuncDefinition params) {
+        cg.line(fd.getLine());
+        cg.comment_functions(fd.getName() + ":");
+
         cg.comment("Parameters:");
         fd.getType().accept(this,params);
 
         cg.comment("Local variables:");
         int localVariables = 0;
-        localVariables = -fd.getVarDefinitions().get(fd.getVarDefinitions().size() - 1).getOffset();
-        cg.enter(localVariables);
+        for(VarDefinition vd : fd.getVarDefinitions()){
+            vd.accept(this,params);
+        }
+
+        if(fd.getVarDefinitions().size() != 0){
+            localVariables = -fd.getVarDefinitions().get(fd.getVarDefinitions().size() - 1).getOffset();
+            cg.enter(localVariables);
+        }
 
         for(Statement st : fd.getStatements()){
             st.accept(this,params);
         }
 
+        if(((FunctionType)fd.getType()).getReturnType() instanceof VoidType){
+            cg.ret(0,localVariables,0);
+        }
 
         return null;
     }
 
     /**
-     execute[[FuncInvocation: expression1 -> expression2 expression3*]]()=
-        value[[(Expression) FuncInvocation]]()
+     execute[[FuncInvocation: statement -> expression2 expression3*]]()=
+        value[[(Expression) statement]]()
         if(!(FuncInvocation.type instanceof VoidType)){
             <pop> FuncInvocation.type.suffix
         }
@@ -119,8 +131,10 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
      **/
     @Override
     public Void visit(Print p, FuncDefinition params) {
-        cg.comment("Write");
         for(Expression expr : p.getExpressions()){
+            cg.line(p.getLine());
+            cg.comment("Write");
+
             expr.accept(vv,null);
             cg.out(expr.getType());
         }
@@ -137,8 +151,10 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
      **/
     @Override
     public Void visit(Input i, FuncDefinition params) {
-        cg.comment("Read");
         for(Expression expr : i.getExpressions()){
+            cg.line(i.getLine());
+            cg.comment("Read");
+
             expr.accept(av,null);
             cg.in(expr.getType());
             cg.store(expr.getType());
@@ -155,6 +171,7 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
      **/
     @Override
     public Void visit(Return r, FuncDefinition params) {
+        cg.comment("Return");
         r.getExpression().accept(vv,null);
         FunctionType funcType = ((FunctionType) params.getType());
 
@@ -173,6 +190,9 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
         <store> expression1.type.suffix
      */
     public Void visit(Assignment a, FuncDefinition params) {
+        cg.line(a.getLine());
+        cg.comment("Assignment:");
+
         a.getLeft().accept(this.av, null);
         a.getRight().accept(this.vv, null);
         cg.store(a.getLeft().getType());
@@ -181,68 +201,75 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
 
     /**
      execute[[While: statement1 -> expression statement2*]]() =
-        int condition = cg.getLabels();
-        int end = cg.getLabels();
-        <label> condition <:>
+        int label1 = cg.getLabels();
+        int label2 = cg.getLabels();
+        <label> label1 <:>
+        <'> condition <:>
         value[[expression]]()
-        <jz label> end
+        <jz label> label2
+        <'> while body <:>
         for(Statement st : statement2*){
             execute[[statement]]()
         }
-        <jmp label> condition
-        <label> end <:>
+        <jmp> label1
+        <label> label2 <:>
      */
     public Void visit(While w, FuncDefinition params) {
-        int condition = cg.getLabels();
-        int end = cg.getLabels();
-        cg.label("label" + condition);
+        int label1 = cg.getLabels();
+        int label2 = cg.getLabels();
+
+        cg.label(label1);
         cg.comment_specific("condition");
         w.getCondition().accept(vv,null);
-        cg.jz("label" + end);
+        cg.jz(label2);
         cg.comment_specific("while body");
         for(Statement st : w.getStatements()){
             st.accept(this,params);
         }
-        cg.jmp("label" + condition);
-        cg.label("label" + end );
+        cg.jmp(label1);
+        cg.label(label2);
         return null;
     }
 
     /**
      execute[[Conditional: statement1 -> expression statement2* statement3*]]() =
-         int else_invocation = cg.getLabels();
-         int end = cg.getLabels();
-         <label> condition <:>
+         int label1 = cg.getLabels();
+         int label2 = cg.getLabels();
+         <'> condition <:>
          value[[expression]]()
-         <jz label> else
+         <jz> label1
+        <'> if body <:>
          for(Statement st : statement2*){
             execute[[statement]]()
          }
-         <jmp label> end
-         <label> else_invocation <:>
+         <jmp> label2
+         <label> label1 <:>
+        <'> else body <:>
          for(Statement st : statement3*){
             execute[[statement]]()
          }
-         <label> end <:>
+        <label> label2 <:>
      */
     public Void visit(Conditional c, FuncDefinition params) {
-        int else_invocation = cg.getLabels();
-        int end = cg.getLabels();
-        //cg.label("condition" + );
+        int label1 = cg.getLabels();
+        int label2 = cg.getLabels();
+
         cg.comment_specific("condition");
+
         c.getCondition().accept(vv,null);
-        cg.jz("label" + else_invocation);
+        cg.jz(label1);
         cg.comment_specific("if body");
         for(Statement st : c.getIfStatements()){
             st.accept(this,params);
         }
-        cg.jmp("label" + end);
-        cg.label("label" + else_invocation);
+
+        cg.jmp(label2);
+        cg.label(label1);
         cg.comment_specific("else body");
         for(Statement st : c.getElseStatements()){
             st.accept(this,params);
         }
-        cg.label("end" + end);
+        cg.label(label2);
         return null;
     }
 

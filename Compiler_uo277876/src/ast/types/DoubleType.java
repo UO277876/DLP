@@ -5,6 +5,9 @@ import ast.Type;
 import semantic.Visitor;
 
 public class DoubleType extends AbstractType{
+
+    private static DoubleType instance;
+
     public DoubleType() {
         super(0, 0);
     }
@@ -68,6 +71,12 @@ public class DoubleType extends AbstractType{
     @Override
     public String toString(){
         return "double";
+    }
+
+    public static DoubleType getInstance() {
+        if (instance == null)
+            instance = new DoubleType();
+        return instance;
     }
 
     @Override

@@ -39,12 +39,12 @@ public class LexerHelper {
 						// Es un número
 						return (char) Integer.parseInt(subStr.substring(1));
 					}
-				} else {
-					// Es un carácter normal
-					return str.charAt(1);
 				}
+			} else {
+				return str.charAt(1);
 			}
 		}
+
 		// No es un carácter
 		return '\0';
 	}
