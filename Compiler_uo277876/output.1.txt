@@ -1,43 +1,59 @@
+#source "input.1.txt"
+
 	' * Global variables:
 	' * array v (offset 0)
-	' Invocation main function
+
+' Invocation main function
 call main
 halt
 
-	' * main:
+
+#line 	4
+main:
 	' * Parameters:
 	' * Local variables:
+	' * double value (offset -4)
+	' * int i (offset -6)
+	' * int j (offset -8)
+	' * array w (offset -48)
+	' * struct date (offset -54)
 	enter	54
+
+#line 	12
 	' * Read
-	pusha	
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	ini
 	storei
+
+#line 	13
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
 	addi
-	pushb	0
+	pushb	97
 	b2i
 	storei
+
+#line 	14
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
 	addi
-	pusha	
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	loadi
-	pusha	
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
@@ -49,26 +65,40 @@ halt
 	pushi	1
 	addi
 	storei
+
+#line 	15
 	' * Write
-	pusha	
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	loadi
 	outi
+
+#line 	15
+	' * Write
 	pushb	10
 	outb
-	pusha	
+
+#line 	15
+	' * Write
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
 	addi
 	loadi
 	outi
+
+#line 	15
+	' * Write
 	pushb	10
 	outb
-	pusha	
+
+#line 	15
+	' * Write
+	push	bp
 	pushi	-54
 	addi
 	pushi	0
@@ -76,54 +106,73 @@ halt
 	loadi
 	i2f
 	outf
+
+#line 	15
+	' * Write
 	pushb	10
 	outb
+
+#line 	17
 	' * Read
-	pusha	
+	push	bp
 	pushi	-4
 	addi
 	inf
 	storef
+
+#line 	19
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	pushi	0
 	storei
 0:
-	' condition
-	pusha	
+
+' condition
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	pushi	10
 	lti
 	jz	1
-	' while body
+
+' while body
+
+#line 	21
 	' * Assignment:
 	pusha	0
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	pushi	4
 	muli
 	addi
-	pusha	
+	push	bp
 	pushi	-4
 	addi
 	loadf
 	storef
+
+#line 	22
 	' * Write
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	outi
-	pushb	0
+
+#line 	22
+	' * Write
+	pushb	58
 	outb
+
+#line 	22
+	' * Write
 	pusha	0
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
@@ -132,46 +181,79 @@ halt
 	addi
 	loadf
 	outf
-	pushb	0
+
+#line 	22
+	' * Write
+	pushb	32
 	outb
-	' condition
-	pusha	
+
+' condition
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	pushi	2
 	modi
 	jz	2
-	' if body
+
+' if body
+
+#line 	24
 	' * Write
-	pushb	0
+	pushb	111
 	outb
-	pushb	0
+
+#line 	24
+	' * Write
+	pushb	100
 	outb
-	pushb	0
+
+#line 	24
+	' * Write
+	pushb	100
 	outb
+
+#line 	24
+	' * Write
 	pushb	10
 	outb
 	jmp	3
 2:
-	' else body
+
+' else body
+
+#line 	26
 	' * Write
-	pushb	0
+	pushb	101
 	outb
-	pushb	0
+
+#line 	26
+	' * Write
+	pushb	118
 	outb
-	pushb	0
+
+#line 	26
+	' * Write
+	pushb	101
 	outb
-	pushb	0
+
+#line 	26
+	' * Write
+	pushb	110
 	outb
+
+#line 	26
+	' * Write
 	pushb	10
 	outb
 3:
+
+#line 	27
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-6
 	addi
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
@@ -180,81 +262,95 @@ halt
 	storei
 	jmp	0
 1:
+
+#line 	29
 	' * Write
 	pushb	10
 	outb
+
+#line 	31
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	pushi	0
 	storei
 4:
-	' condition
-	pusha	
+
+' condition
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	pushi	4
 	lti
 	jz	5
-	' while body
+
+' while body
+
+#line 	33
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-8
 	addi
 	pushi	0
 	storei
 6:
-	' condition
-	pusha	
+
+' condition
+	push	bp
 	pushi	-8
 	addi
 	loadi
 	pushi	5
 	lti
 	jz	7
-	' while body
+
+' while body
+
+#line 	35
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-48
 	addi
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	pushi	10
 	muli
 	addi
-	pusha	
+	push	bp
 	pushi	-8
 	addi
 	loadi
 	pushi	2
 	muli
 	addi
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
-	pusha	
+	push	bp
 	pushi	-8
 	addi
 	loadi
 	addi
 	storei
+
+#line 	36
 	' * Write
-	pusha	
+	push	bp
 	pushi	-48
 	addi
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
 	pushi	10
 	muli
 	addi
-	pusha	
+	push	bp
 	pushi	-8
 	addi
 	loadi
@@ -263,13 +359,18 @@ halt
 	addi
 	loadi
 	outi
-	pushb	0
+
+#line 	36
+	' * Write
+	pushb	32
 	outb
+
+#line 	37
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-8
 	addi
-	pusha	
+	push	bp
 	pushi	-8
 	addi
 	loadi
@@ -278,14 +379,18 @@ halt
 	storei
 	jmp	6
 7:
+
+#line 	39
 	' * Write
 	pushb	10
 	outb
+
+#line 	40
 	' * Assignment:
-	pusha	
+	push	bp
 	pushi	-6
 	addi
-	pusha	
+	push	bp
 	pushi	-6
 	addi
 	loadi
@@ -294,3 +399,4 @@ halt
 	storei
 	jmp	4
 5:
+	ret	0, 54, 0
