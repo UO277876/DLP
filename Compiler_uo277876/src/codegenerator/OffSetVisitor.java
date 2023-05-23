@@ -61,6 +61,7 @@ public class OffSetVisitor extends AbstractVisitor<Void, Void> {
 
         for (VarDefinition vf :fd.getVarDefinitions()) {
             // VARIABLES LOCALES: BP - sumatorio variables anteriores (y ella misma)
+            vf.accept(this,params);
             sumBytesLocalVar += vf.getType().numberOfBytes();
             vf.setOffset(-sumBytesLocalVar);
         }

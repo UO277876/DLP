@@ -60,7 +60,7 @@ public class CodeGenerator {
      * Para las labels
      */
     public void label(int id) {
-        out.println(id + ":");
+        out.println("label" + id + ":");
         out.flush();
     }
 
@@ -303,7 +303,7 @@ public class CodeGenerator {
      * <id> si el valor entero es distinto de cero (jnz)
      */
     public void jmp(int id) {
-        out.println("\tjmp\t" + id);
+        out.println("\tjmp\t" + "label" + id);
         out.flush();
     }
 
@@ -312,7 +312,7 @@ public class CodeGenerator {
      * <id> si el valor entero es cero
      */
     public void jz(int id) {
-        out.println("\tjz\t" + id);
+        out.println("\tjz\t" + "label" + id);
         out.flush();
     }
 
@@ -320,7 +320,7 @@ public class CodeGenerator {
      * Saltos incondicionales a la etiqueta <id>
      */
     public void jnz(int id) {
-        out.println("\tjnz\t" + id);
+        out.println("\tjnz\t" + "label" + id);
         out.flush();
     }
 

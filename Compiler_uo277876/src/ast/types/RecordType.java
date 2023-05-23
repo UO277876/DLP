@@ -61,7 +61,9 @@ public class RecordType extends AbstractType {
 
     @Override
     public String toString(){
-        return "struct";
+        return "RecordType[" +
+                "fields:" + fields +
+                "]";
     }
 
     @Override

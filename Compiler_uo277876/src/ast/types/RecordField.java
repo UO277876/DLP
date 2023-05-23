@@ -30,6 +30,15 @@ public class RecordField extends AbstractASTNode {
     }
 
     @Override
+    public String toString() {
+        return "Field[" +
+                "name:" + name +
+                ",type:" + typeOf +
+                " offset:" + offset +
+                "]";
+    }
+
+    @Override
     public <TP, TR> TR accept(Visitor<TP, TR> visitor, TP parameters) {
         return visitor.visit(this,parameters);
     }

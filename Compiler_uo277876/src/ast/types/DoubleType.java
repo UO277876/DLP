@@ -70,7 +70,7 @@ public class DoubleType extends AbstractType{
 
     @Override
     public String toString(){
-        return "double";
+        return "RealType";
     }
 
     public static DoubleType getInstance() {

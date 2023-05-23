@@ -41,7 +41,7 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
                 def.accept(this, params);
             }
         }
-        cg.comment_specific("Invocation main function");
+        cg.comment_specific("Invocation to the main function");
         cg.mainCall();
         cg.halt();
         for (Definition def : p.getDefinitions()) {
@@ -215,14 +215,17 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
         <label> label2 <:>
      */
     public Void visit(While w, FuncDefinition params) {
+        cg.line(w.getLine());
+        cg.comment("While:");
+
         int label1 = cg.getLabels();
         int label2 = cg.getLabels();
 
+        cg.line(w.getLine());
         cg.label(label1);
-        cg.comment_specific("condition");
         w.getCondition().accept(vv,null);
         cg.jz(label2);
-        cg.comment_specific("while body");
+        cg.comment("While body:");
         for(Statement st : w.getStatements()){
             st.accept(this,params);
         }
@@ -251,21 +254,23 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
         <label> label2 <:>
      */
     public Void visit(Conditional c, FuncDefinition params) {
+        cg.line(c.getLine());
+        cg.comment("If:");
+
         int label1 = cg.getLabels();
         int label2 = cg.getLabels();
 
-        cg.comment_specific("condition");
-
+        cg.line(c.getLine());
         c.getCondition().accept(vv,null);
         cg.jz(label1);
-        cg.comment_specific("if body");
+        cg.comment("if body");
         for(Statement st : c.getIfStatements()){
             st.accept(this,params);
         }
 
         cg.jmp(label2);
         cg.label(label1);
-        cg.comment_specific("else body");
+        cg.comment("else body");
         for(Statement st : c.getElseStatements()){
             st.accept(this,params);
         }
