@@ -80,15 +80,16 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
 
         if(fd.getVarDefinitions().size() != 0){
             localVariables = -fd.getVarDefinitions().get(fd.getVarDefinitions().size() - 1).getOffset();
-            cg.enter(localVariables);
         }
 
+        cg.enter(localVariables);
+
         for(Statement st : fd.getStatements()){
-            st.accept(this,params);
+            st.accept(this,fd);
         }
 
         if(((FunctionType)fd.getType()).getReturnType() instanceof VoidType){
-            cg.ret(0,localVariables,0);
+            cg.ret(0,localVariables,((FunctionType) fd.getType()).getBytesParamsSum());
         }
 
         return null;
@@ -103,6 +104,8 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
      **/
     @Override
     public Void visit(FunctionInvocation fi, FuncDefinition params) {
+        cg.line(fi.getLine());
+
         fi.accept(vv,null);
         if(!(fi.getType() instanceof VoidType)){
             cg.pop(fi.getType());
@@ -171,7 +174,9 @@ public class ExecuteCGVisitor extends AbstractCGVisitor<FuncDefinition,Void> {
      **/
     @Override
     public Void visit(Return r, FuncDefinition params) {
+        cg.line(r.getLine());
         cg.comment("Return");
+
         r.getExpression().accept(vv,null);
         FunctionType funcType = ((FunctionType) params.getType());
 

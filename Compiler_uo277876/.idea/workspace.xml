@@ -6,25 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f154dfb3-412f-44b6-9b41-b996ca2c276c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DLP_uo277876.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_uo277876.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DLP_uo277876.png" beforeDir="false" afterPath="$PROJECT_DIR$/DLP_uo277876.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/CharType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/DoubleType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/IntType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/VoidType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/ast/types/VoidType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/CodeGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/ExecuteCGVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Compiler_uo277876/codegenerator/ExecuteCGVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/ArrayType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/CharType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/CharType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/DoubleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/DoubleType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/IntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/IntType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/RecordType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/RecordType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/types/VoidType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/types/VoidType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/ExecuteCGVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/codegenerator/OffSetVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +82,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Compiler_uo277876" />
-      <option name="PROGRAM_PARAMETERS" value="input.1.txt output.1.txt" />
+      <option name="PROGRAM_PARAMETERS" value="big.input.txt big.output.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,5 +141,8 @@
         <PinnedItemInfo parentTag="ast.statements.Print" memberName="expressions" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Compiler_uo277876$Main.ic" NAME="Main Coverage Results" MODIFIED="1684881560815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
