@@ -18,3 +18,12 @@ R:
 (2) // int sumBytesRecordFields Es una variable global del visitor offset
     field.offset = sumBytes;
     ...
+
+(3) int sumBytesParams = 0;
+    for (int i = ft.getParameters().size() - 1; i >= 0; i--) {
+         VarDefinition vd = ft.getParameters().get(i);
+         vd.setOffset(4 + sumBytesParams);
+         sumBytesParams += vd.getType().numberOfBytes();
+    }
+
+    ft.setBytesParamsSum(sumBytesParams);
