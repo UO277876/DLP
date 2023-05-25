@@ -1,7 +1,9 @@
 P:
 (1) RecordType: type -> field*
 (2) RecordField: field -> ID type
-(3) FunctionType: type1 -> type2.vardefinition*
+(3) FunctionType: type1 -> type2 vardefinition*
+(4) FuncDefinition: definition1 -> type ID definitions2* statements*
+(5) VarDefinition: definition -> type ID;
 
 R:
 ------ Opción 1: Que lo calcule el padre ------
@@ -17,13 +19,27 @@ R:
 (1) sumBytes = 0
 (2) // int sumBytesRecordFields Es una variable global del visitor offset
     field.offset = sumBytes;
-    ...
+
 
 (3) int sumBytesParams = 0;
-    for (int i = ft.getParameters().size() - 1; i >= 0; i--) {
-         VarDefinition vd = ft.getParameters().get(i);
-         vd.setOffset(4 + sumBytesParams);
-         sumBytesParams += vd.getType().numberOfBytes();
+    for (int i = vardefinition*.size() - 1; i >= 0; i--) {
+         VarDefinition vd = vardefinition*.get(i);
+         vd.offset = 4 + sumBytesParams;
+         sumBytesParams += vd.type.numberOfBytes();
     }
 
-    ft.setBytesParamsSum(sumBytesParams);
+    ft.bytesParamsSum = sumBytesParams;
+
+(4) int sumBytesLocalVar = 0;
+    for (VarDefinition vf : definitions2*) {
+        sumBytesLocalVar += vf.type.numberOfBytes();
+        definition1.offset = -sumBytesLocalVar;
+    }
+
+    definition1.bytesLocalsSum = sumBytesLocalVar;
+
+(5) // sumBytesGlobalVar es una variable global del Visitor
+    if (definition.scope == 0) {
+        definition.offset = sumBytesGlobalVar;
+        sumBytesGlVar += definition.type.numberOfBytes();
+    }
